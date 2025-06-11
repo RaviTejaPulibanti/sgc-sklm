@@ -3,6 +3,7 @@ import AdminLogin from "./Admin/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./Admin/dashboard/Dashboard";
 import PrivateAdminRoute from "./components/PrivateAdminRoute";
+import Footer from "./components/Footer/Footer";
 
 function AppRoutes() {
   const location = useLocation();
@@ -23,6 +24,8 @@ function AppRoutes() {
         </Route>
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
       </Routes>
+
+      <Footer />
     </>
   );
 }
