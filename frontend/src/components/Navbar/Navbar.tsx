@@ -65,13 +65,17 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           {/* Logo Section */}
-          <div className="navbar-logo">
+          <div className="navbar-logo pt-4">
             <img 
-              src="https://via.placeholder.com/50x50?text=LOGO" 
+              src="./rgukt_logo.png" 
               alt="College Logo" 
               className="college-logo" 
             />
-            <span className="college-name">SGC</span>
+             <img 
+              src="./mainlogo.png" 
+              alt="SGC Logo" 
+              className="sgc-logo" 
+            />
           </div>
 
           {/* Desktop Navigation */}

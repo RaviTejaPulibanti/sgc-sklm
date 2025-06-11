@@ -3,6 +3,7 @@ import AdminLogin from "./Admin/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./Admin/dashboard/Dashboard";
 import PrivateAdminRoute from "./components/PrivateAdminRoute";
+import Home from "./pages/home/Home";
 
 function AppRoutes() {
   const location = useLocation();
@@ -16,7 +17,7 @@ function AppRoutes() {
       {!hideNavbar && <Navbar />}
 
       <Routes>
-        <Route path="/" element={<h1>Welcome Normal Users</h1>} />
+        <Route path="/" element={<Home />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route element={<PrivateAdminRoute />}>
           <Route path="/admin/dashboard" element={<Dashboard />} />
