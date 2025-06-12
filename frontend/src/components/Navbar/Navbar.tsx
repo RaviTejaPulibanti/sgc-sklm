@@ -44,7 +44,7 @@ const Navbar = () => {
         path: '#',
         dropdown: [
           { name: 'Advisory Board', icon: <FaGraduationCap />, path: '/advisory-board' },
-          { name: 'Executive Board', icon: <FaGraduationCap />, path: '#' },
+          { name: 'Executive Board', icon: <FaGraduationCap />, path: '/executive-board' },
           { name: 'Members', icon: <FaGraduationCap />, path: '#' },
         ]
 
