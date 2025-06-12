@@ -5,6 +5,8 @@ import Dashboard from "./Admin/dashboard/Dashboard";
 import PrivateAdminRoute from "./components/PrivateAdminRoute";
 import Home from "./pages/home/Home";
 import Footer from "./components/Footer/Footer";
+import Counter from "./components/Numbers/Counter";
+import About from "./components/About/About";
 
 function AppRoutes() {
   const location = useLocation();
@@ -24,8 +26,9 @@ function AppRoutes() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
         </Route>
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+        <Route path="/about" element={<About />} />
       </Routes>
-
+      <Counter />
       <Footer />
     </>
   );

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Carousel from './Carousel';
 
@@ -5,7 +6,7 @@ const Home: React.FC = () => {
   const slides = [
     {
       id: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1557761463-34b84c0b6c2e',
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D5622AQE-yJgliGUIPw/feedshare-shrink_2048_1536/B56ZYor9.lGsAs-/0/1744439342613?e=1752710400&v=beta&t=_IQvKjEUvqqNj76OQg0DzvzGs7sS0GlY_nkYE3XJwiA',
       title: 'Welcome to Our Prestigious College',
       subtitle: 'Excellence in Education Since 1950',
       ctaText: 'Explore Programs',

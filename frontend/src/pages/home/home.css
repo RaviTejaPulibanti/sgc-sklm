@@ -1,0 +1,34 @@
+/* Reset margins and padding for full-width carousel */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content styles */
+.main-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+}

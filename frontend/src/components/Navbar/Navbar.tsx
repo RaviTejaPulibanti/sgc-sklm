@@ -11,6 +11,7 @@ import {
   FaChalkboardTeacher, 
   
 } from 'react-icons/fa';
+import { MdGroups } from "react-icons/md";
 import './Navbar.css';
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Home', icon: <FaHome />, path: '#', dropdown: null },
+    { name: 'Home', icon: <FaHome />, path: '/', dropdown: null },
     { 
         name: 'Advisory & Executive Board',
         icon: <FaChalkboardTeacher />,
@@ -48,7 +49,8 @@ const Navbar = () => {
         ]
 
     },
-    { name: 'About', icon: <FaInfoCircle />, path: '#', dropdown: null },
+    { name: 'Clubs', icon: <MdGroups />, path: '#', dropdown: null },
+    { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
     { name: 'News & Events', icon: <FaNewspaper />, path: '#', dropdown: null },
       { name: 'Contact', icon: <FaEnvelope />, path: '#', dropdown: null },
       {

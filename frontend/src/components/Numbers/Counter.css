@@ -1,0 +1,110 @@
+/* Counter.css */
+.counter-container {
+  padding: 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.counter-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.counter-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4CAF50, #2196F3, #FF5722, #9C27B0);
+  border-radius: 2px;
+}
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.counter-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.counter-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.counter-label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Animation */
+@keyframes countUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.counter-card {
+  animation: countUp 0.6s ease forwards;
+}
+
+.counter-card:nth-child(1) { animation-delay: 0.1s; }
+.counter-card:nth-child(2) { animation-delay: 0.2s; }
+.counter-card:nth-child(3) { animation-delay: 0.3s; }
+.counter-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .counter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .counter-title {
+    font-size: 2rem;
+  }
+  
+  .counter-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .counter-container {
+    padding: 1rem;
+  }
+  
+  .counter-title {
+    font-size: 1.8rem;
+  }
+}
