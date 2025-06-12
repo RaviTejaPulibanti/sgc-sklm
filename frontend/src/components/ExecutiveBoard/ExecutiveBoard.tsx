@@ -233,50 +233,49 @@ const ExecutiveBoard: React.FC = () => {
   ];
 
   // Background circle elements
-  const BackgroundCircles = () => (
-    <>
-      <motion.div 
-        className="bg-circle bg-circle-1"
-        animate={{
-          x: [0, 10, 0],
-          y: [0, -15, 0],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          ease: 'easeInOut'
-        }}
-      />
-      <motion.div 
-        className="bg-circle bg-circle-2"
-        animate={{
-          x: [0, -20, 0],
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          ease: 'easeInOut'
-        }}
-      />
-      <motion.div 
-        className="bg-circle bg-circle-3"
-        animate={{
-          x: [0, 15, 0],
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          ease: 'easeInOut'
-        }}
-      />
-    </>
-  );
-
+ const BackgroundCircles = () => (
+  <>
+    <motion.div 
+      className="bg-circle bg-circle-1"
+      animate={{
+        x: [0, 50, 0],
+        y: [0, -30, 0],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        repeatType: 'reverse',
+        ease: 'easeInOut'
+      }}
+    />
+    <motion.div 
+      className="bg-circle bg-circle-2"
+      animate={{
+        x: [0, -40, 0],
+        y: [0, 20, 0],
+      }}
+      transition={{
+        duration: 25,
+        repeat: Infinity,
+        repeatType: 'reverse',
+        ease: 'easeInOut'
+      }}
+    />
+    <motion.div 
+      className="bg-circle bg-circle-3"
+      animate={{
+        x: [0, 30, 0],
+        y: [0, 40, 0],
+      }}
+      transition={{
+        duration: 30,
+        repeat: Infinity,
+        repeatType: 'reverse',
+        ease: 'easeInOut'
+      }}
+    />
+  </>
+);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -335,10 +334,6 @@ const ExecutiveBoard: React.FC = () => {
   return (
     <div className="executive-board">
       <BackgroundCircles />
-      
-      <br />
-      <br />
-      <br />
       <h1 className="board-title">Executive Board</h1>
       <p className="board-subtitle">Leadership that drives our vision forward</p>
       

@@ -49,7 +49,7 @@ const Navbar = () => {
         ]
 
     },
-    { name: 'Clubs', icon: <MdGroups />, path: '#', dropdown: null },
+    { name: 'Clubs', icon: <MdGroups />, path: '/clubs', dropdown: null },
     { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
     { name: 'News & Events', icon: <FaNewspaper />, path: '#', dropdown: null },
       { name: 'Contact', icon: <FaEnvelope />, path: '#', dropdown: null },

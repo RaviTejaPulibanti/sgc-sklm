@@ -9,6 +9,7 @@ import Counter from "./components/Numbers/Counter";
 import About from "./components/About/About";
 import AdvisoryBoard from "./components/AdvisoryBoard/AdvisoryBoard";
 import ExecutiveBoard from "./components/ExecutiveBoard/ExecutiveBoard";
+import ClubHome from "./components/Clubs/ClubHome";
 
 function AppRoutes() {
   const location = useLocation();
@@ -31,6 +32,7 @@ function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/advisory-board" element={<AdvisoryBoard />} />
         <Route path="/executive-board" element={<ExecutiveBoard />} />
+        <Route path="/clubs" element={<ClubHome />} />
       </Routes>
 
       <Counter />

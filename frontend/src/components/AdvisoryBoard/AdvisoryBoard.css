@@ -12,15 +12,70 @@
 
 /* Base Styles */
 .advisory-board {
-  padding: 5rem 1.5rem;
+  padding: 7rem 1.5rem 5rem;
   background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Background */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+  filter: blur(40px);
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -50px;
+  left: -50px;
+  animation: float 15s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  animation: float 18s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 250px;
+  height: 250px;
+  top: 30%;
+  right: 10%;
+  animation: float 12s ease-in-out infinite 2s;
+}
+
+.circle-4 {
+  width: 350px;
+  height: 350px;
+  bottom: 20%;
+  left: 10%;
+  animation: float 20s ease-in-out infinite 3s reverse;
 }
 
 /* Section Header */
@@ -30,7 +85,7 @@
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: var(--dark);
   margin-bottom: 1rem;
@@ -60,8 +115,9 @@
 /* Board Members Grid */
 .board-members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 0 2rem;
 }
 
 /* Member Card */
@@ -268,15 +324,26 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1440px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .board-members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
+  .advisory-board {
+    padding: 6rem 1rem 3rem;
+  }
+  
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .section-subtitle {
@@ -308,11 +375,15 @@
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
+  
+  .board-members-grid {
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
   .advisory-board {
-    padding: 3rem 1rem;
+    padding: 5rem 1rem 2rem;
   }
   
   .section-title {
@@ -336,18 +407,24 @@
   .board-members-grid {
     grid-template-columns: 1fr;
   }
+  
+  .bg-circle {
+    display: none;
+  }
 }
 
 /* Animations */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(2deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(0) rotate(0deg);
   }
-}
-
-.floating {
-  animation: float 6s ease-in-out infinite;
+  75% {
+    transform: translateY(20px) rotate(-2deg);
+  }
 }

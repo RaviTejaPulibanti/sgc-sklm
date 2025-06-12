@@ -106,6 +106,13 @@ const AdvisoryBoard: React.FC = () => {
 
   return (
     <div className="advisory-board">
+      <div className="animated-bg">
+        <div className="bg-circle circle-1"></div>
+        <div className="bg-circle circle-2"></div>
+        <div className="bg-circle circle-3"></div>
+        <div className="bg-circle circle-4"></div>
+      </div>
+
       <div className="container">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

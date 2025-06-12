@@ -35,7 +35,7 @@ const About = () => {
             viewport={{ once: true }}
             className="director-image"
           >
-            <img src="https://sgcrguktsklm.org.in/about/images/director.jpg" alt="Director" />
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDsx5yLHbg7quYPl9zu_OHZPIZG2fHS4k9wWsiDp1BsroJDKA3WH2UJr7R4g7M2YAC9eN78PNwn28bE8Eh_Xb3CSdBUmrT5ADa5pTWT_VzhtZ2Y36ER0hM8JN7IRRAKdYh9GrxP1hL8MVs_In3iP8-VyMUzfUngmK2EDiFyZKdWIsb_rwfO_i8DNIuszf3/s320/director.jpg" alt="Director" />
             <div className="image-overlay"></div>
           </motion.div>
 
