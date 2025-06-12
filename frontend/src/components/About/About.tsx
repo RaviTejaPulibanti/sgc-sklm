@@ -93,7 +93,7 @@ const About = () => {
             </p>
             <div className="signature">
               <p className="name">Dr.Ravi Gedela </p>
-              M.Sc , M.Tech (IIT G) (Ph.D IIT G)(IIT G) (Ph.D IIT G)
+              M.Sc , M.Tech (IIT G) (Ph.D IIT G)
               <p className="position">Chairman, SGC</p>
             </div>
           </motion.div>

@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Footer from "./components/Footer/Footer";
 import Counter from "./components/Numbers/Counter";
 import About from "./components/About/About";
+import AdvisoryBoard from "./components/AdvisoryBoard/AdvisoryBoard";
 
 function AppRoutes() {
   const location = useLocation();
@@ -18,7 +19,7 @@ function AppRoutes() {
   return (
     <>
       {!hideNavbar && <Navbar />}
-
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -27,7 +28,9 @@ function AppRoutes() {
         </Route>
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         <Route path="/about" element={<About />} />
+        <Route path="/advisory-board" element={<AdvisoryBoard />} />
       </Routes>
+
       <Counter />
       <Footer />
     </>

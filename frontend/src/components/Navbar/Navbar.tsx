@@ -43,7 +43,7 @@ const Navbar = () => {
         icon: <FaChalkboardTeacher />,
         path: '#',
         dropdown: [
-          { name: 'Advisory Board', icon: <FaGraduationCap />, path: '#' },
+          { name: 'Advisory Board', icon: <FaGraduationCap />, path: '/advisory-board' },
           { name: 'Executive Board', icon: <FaGraduationCap />, path: '#' },
           { name: 'Members', icon: <FaGraduationCap />, path: '#' },
         ]
