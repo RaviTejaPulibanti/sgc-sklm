@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Carousel from './Carousel';
+import Counter from './Numbers/Counter';
 
 const Home: React.FC = () => {
   const slides = [
@@ -34,6 +35,7 @@ const Home: React.FC = () => {
     <div className="w-screen min-h-screen bg-gray-50 ">
       {/* ✅ Responsive height for mobile and desktop */}
         <Carousel slides={slides} autoPlay={true} interval={6000} />
+        <Counter />
       {/* Main Content */}
     </div>
   );

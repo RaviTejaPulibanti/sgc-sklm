@@ -52,7 +52,7 @@ const Navbar = () => {
     { name: 'Clubs', icon: <MdGroups />, path: '/clubs', dropdown: null },
     { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
     { name: 'News & Events', icon: <FaNewspaper />, path: '#', dropdown: null },
-      { name: 'Contact', icon: <FaEnvelope />, path: '#', dropdown: null },
+      { name: 'Contact', icon: <FaEnvelope />, path: '/contact', dropdown: null },
       {
         name: 'Reports', icon : <FaNewspaper /> , path: '#', dropdown: [
               { name: 'AY 2022-23', icon: null, path: '#' },

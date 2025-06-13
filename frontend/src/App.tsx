@@ -5,11 +5,12 @@ import Dashboard from "./Admin/dashboard/Dashboard";
 import PrivateAdminRoute from "./components/PrivateAdminRoute";
 import Home from "./pages/home/Home";
 import Footer from "./components/Footer/Footer";
-import Counter from "./components/Numbers/Counter";
+import Counter from "./pages/home/Numbers/Counter";
 import About from "./components/About/About";
 import AdvisoryBoard from "./components/AdvisoryBoard/AdvisoryBoard";
 import ExecutiveBoard from "./components/ExecutiveBoard/ExecutiveBoard";
 import ClubHome from "./components/Clubs/ClubHome";
+import Contact from "./components/Contact/Contact";
 
 function AppRoutes() {
   const location = useLocation();
@@ -33,9 +34,9 @@ function AppRoutes() {
         <Route path="/advisory-board" element={<AdvisoryBoard />} />
         <Route path="/executive-board" element={<ExecutiveBoard />} />
         <Route path="/clubs" element={<ClubHome />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      <Counter />
       <Footer />
     </>
   );
