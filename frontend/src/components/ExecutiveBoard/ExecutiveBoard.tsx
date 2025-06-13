@@ -181,7 +181,7 @@ const ExecutiveBoard: React.FC = () => {
       }
     },
     {
-      id: 16,
+      id: 21,
       name: 'John Smith',
       position: 'Social Media Manager',
       image: 'https://randomuser.me/api/portraits/men/1.jpg',
