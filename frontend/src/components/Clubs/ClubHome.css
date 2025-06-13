@@ -1,12 +1,33 @@
 /* Base Styles */
-.clubs-page-container {
+
+
+/* .clubs-page-container {
   width: 100%;
   padding-top: 6rem;
   padding-bottom: 4rem;
-  background-color: transparent;
   min-height: 100vh;
+
+   background:url('https://img.freepik.com/free-vector/abstract-red-light-lines-pipe-speed-zoom-black-background-technology_1142-9381.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+ 
   position: relative;
   overflow: hidden;
+} */
+.clubs-page-container {
+  width: 100vw; /* Use viewport width instead of 100% */
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  
+  background: url('https://img.freepik.com/free-vector/three-realistic-focus-lights-studio-background_1017-38989.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  position: relative;
+  overflow-x: hidden; /* Only hide horizontal overflow */
+  margin-left: calc(-50vw + 50%); /* This centers the container properly */
 }
 
 /* Background animation elements */
@@ -20,11 +41,14 @@
   filter: blur(40px);
 }
 
-.clubs-content-container {
+
+  .clubs-content-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem; /* Restore this padding */
+  position: relative;
 }
+
 
 .clubs-title {
   font-size: 2.5rem;
@@ -36,26 +60,39 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: chocolate 2px 2px 2px;
+ 
 }
 
 .clubs-subtitle {
   font-size: 1.1rem;
-  color: #64748b;
-  text-align: center;
+  color: whitesmoke;
+  text-align: center; 
   margin-bottom: 3rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-decoration: underline;
+ 
 }
 
 .clubs-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns on desktop */
+  grid-template-columns: repeat(2,1fr); /* Two columns on desktop */
   gap: 2rem;
+  justify-content: center;
+  max-width: 1100px;
+  margin-left: 5%;
+  margin: 0 auto;
+  width:calc(100%-10%);
+  padding: 0;
+  gap:3rem;
+  margin:0 auto;
 }
 
 .club-card {
-  background: white;
+   background: rgba(255, 255, 255, 0.85); /* soft white */
+  backdrop-filter: blur(6px); 
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -63,6 +100,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width:100%;
+  max-width:350px;
+  min-height: 380px;
+  padding-left: 0;
+ 
+  margin:0 auto;
+
 }
 
 .club-image-container {
@@ -156,18 +200,27 @@
   
   .clubs-title {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
   }
   
   .clubs-subtitle {
     font-size: 1rem;
+    font-weight:500;
+    text-decoration: none;
   }
 
   .clubs-page-container {
-    padding-top: 5rem;
+    padding-top: 7rem;
   }
 
   .clubs-grid {
     grid-template-columns: 1fr; /* Switch to one column on tablets */
+    max-width:400px;
+  }
+
+  .club-card {
+    max-width: 100%; /* Full width cards on mobile */
   }
 }
 
@@ -186,9 +239,11 @@
   .club-content {
     padding: 1rem;
   }
-
+  .clubs-title {
+    font-size: 1.8rem;
+  }
   .clubs-page-container {
-    padding-top: 4.5rem;
+    padding-top: 8rem;
   }
 }
 
