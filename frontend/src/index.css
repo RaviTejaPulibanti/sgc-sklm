@@ -1,1 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap");
+
 @import "tailwindcss";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}

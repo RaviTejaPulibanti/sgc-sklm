@@ -1,161 +1,66 @@
-import { useState, useEffect } from 'react';
-import { 
-  FaHome, 
-  FaGraduationCap, 
-  FaInfoCircle, 
-  FaNewspaper, 
-  FaEnvelope, 
-  FaBars, 
-  FaTimes, 
-  FaChevronDown, 
-  FaChalkboardTeacher, 
-  
-} from 'react-icons/fa';
-import { MdGroups } from "react-icons/md";
-import './Navbar.css';
+// components/DesktopNavbar.tsx
+import React from 'react';
 
-const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const toggleDropdown = (dropdown : any ) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
-
-  const navLinks = [
-    { name: 'Home', icon: <FaHome />, path: '/', dropdown: null },
-    { 
-        name: 'Advisory & Executive Board',
-        icon: <FaChalkboardTeacher />,
-        path: '#',
-        dropdown: [
-          { name: 'Advisory Board', icon: <FaGraduationCap />, path: '/advisory-board' },
-          { name: 'Executive Board', icon: <FaGraduationCap />, path: '/executive-board' },
-          { name: 'Members', icon: <FaGraduationCap />, path: '#' },
-        ]
-
-    },
-    { name: 'Clubs', icon: <MdGroups />, path: '/clubs', dropdown: null },
-    { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
-    { name: 'News & Events', icon: <FaNewspaper />, path: '#', dropdown: null },
-      { name: 'Contact', icon: <FaEnvelope />, path: '#', dropdown: null },
-      {
-        name: 'Reports', icon : <FaNewspaper /> , path: '#', dropdown: [
-              { name: 'AY 2022-23', icon: null, path: '#' },
-              { name: 'AY 2023-24', icon: null, path: '#' },
-              { name: 'AY 2024-25', icon: null, path: '#' }
-        ]
-      }
-  ];
-
+const DesktopNavbar: React.FC = () => {
   return (
-    <>
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-        <div className="navbar-container">
-          {/* Logo Section */}
-          <div className="navbar-logo pt-4">
-            <img 
-              src="./rgukt_logo.png" 
-              alt="College Logo" 
-              className="college-logo" 
-            />
-             <img 
-              src="./mainlogo.png" 
-              alt="SGC Logo" 
-              className="sgc-logo" 
-            />
-          </div>
-
-          {/* Desktop Navigation */}
-          <ul className="nav-links">
-            {navLinks.map((link, index) => (
-              <li 
-                key={index} 
-                className={activeDropdown === link.name ? 'active' : ''}
-                onMouseEnter={() => link.dropdown && toggleDropdown(link.name)}
-                onMouseLeave={() => link.dropdown && toggleDropdown(null)}
-              >
-                <a href={link.path}>
-                  {link.icon} {link.name} 
-                  {link.dropdown && <FaChevronDown className="dropdown-icon" />}
+    <nav className="hidden md:block fixed w-full z-50">
+      <div className="backdrop-blur-md bg-white/20 shadow-sm border-b border-white/10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 rounded-b-xl">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <img
+                className="h-10 w-auto"
+                src="/college-logo.png"
+                alt="College Logo"
+              />
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                <a
+                  href="#"
+                  className="text-gray-100 hover:bg-white/20 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-all duration-300"
+                >
+                  Home
                 </a>
-                
-                {link.dropdown && (
-                  <div className={`dropdown-content ${activeDropdown === link.name ? 'show' : ''}`}>
-                    {link.dropdown.map((item, i) => (
-                      <a key={i} href={item.path}>
-                        {item.icon} {item.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-
-         
-
-          {/* Mobile Menu Toggle */}
-          <button className="hamburger" onClick={toggleMobileMenu}>
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
+                <a
+                  href="#"
+                  className="text-gray-100 hover:bg-white/20 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-all duration-300"
+                >
+                  About
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-100 hover:bg-white/20 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-all duration-300"
+                >
+                  Courses
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-100 hover:bg-white/20 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-all duration-300"
+                >
+                  Faculty
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-100 hover:bg-white/20 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition-all duration-300"
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-4 flex items-center md:ml-6">
+              <button className="relative overflow-hidden group bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
+                <span className="relative z-10">Apply Now</span>
+                <span className="absolute inset-0 bg-white/10 group-hover:bg-white/20 backdrop-blur-xs transition-all duration-300"></span>
+              </button>
+            </div>
+          </div>
         </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-        <ul className="mobile-links">
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <a 
-                href={link.path} 
-                onClick={() => {
-                  if (link.dropdown) {
-                    toggleDropdown(link.name);
-                  } else {
-                    setIsMobileMenuOpen(false);
-                  }
-                }}
-              >
-                {link.icon} {link.name}
-                {link.dropdown && <FaChevronDown className={`dropdown-icon ${activeDropdown === link.name ? 'rotate' : ''}`} />}
-              </a>
-              
-              {link.dropdown && (
-                <div className={`mobile-dropdown ${activeDropdown === link.name ? 'show' : ''}`}>
-                  {link.dropdown.map((item, i) => (
-                    <a 
-                      key={i} 
-                      href={item.path}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.icon} {item.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-        
-       
       </div>
-    </>
+    </nav>
   );
 };
 
-export default Navbar;
+export default DesktopNavbar;

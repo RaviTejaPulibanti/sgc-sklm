@@ -10,6 +10,7 @@ import About from "./components/About/About";
 import AdvisoryBoard from "./components/AdvisoryBoard/AdvisoryBoard";
 import ExecutiveBoard from "./components/ExecutiveBoard/ExecutiveBoard";
 import ClubHome from "./components/Clubs/ClubHome";
+import MobileNavbar from "./components/Navbar/MobileNavbar";
 
 function AppRoutes() {
   const location = useLocation();
@@ -20,7 +21,13 @@ function AppRoutes() {
 
   return (
     <>
-      {!hideNavbar && <Navbar />}
+      {!hideNavbar &&
+        <div>
+          <Navbar />
+          <MobileNavbar />
+        </div>
+        
+      }
       
       <Routes>
         <Route path="/" element={<Home />} />
