@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './carousel.css'; // Import regular CSS file
+import './carousel.css'; 
 
 interface Slide {
   id: number;
   imageUrl: string;
-  title: string;
-  subtitle: string;
-  ctaText: string;
-  ctaLink: string;
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
 }
 
 interface CarouselProps {
@@ -18,22 +18,12 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ slides, autoPlay = true, interval = 5000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+ 
 
   const nextSlide = () => {
-    setIsTransitioning(true);
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
-  const prevSlide = () => {
-    setIsTransitioning(true);
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const goToSlide = (index: number) => {
-    setIsTransitioning(true);
-    setCurrentSlide(index);
-  };
 
   useEffect(() => {
     if (!autoPlay) return;
@@ -44,20 +34,6 @@ const Carousel: React.FC<CarouselProps> = ({ slides, autoPlay = true, interval =
 
     return () => clearTimeout(timer);
   }, [currentSlide, autoPlay, interval]);
-
-  useEffect(() => {
-    const handleTransitionEnd = () => {
-      setIsTransitioning(false);
-    };
-
-    const carousel = document.querySelector('.carousel');
-    carousel?.addEventListener('transitionend', handleTransitionEnd);
-
-    return () => {
-      carousel?.removeEventListener('transitionend', handleTransitionEnd);
-    };
-  }, []);
-
   return (
     <div className="carousel-container">
       <div 
@@ -96,34 +72,6 @@ const Carousel: React.FC<CarouselProps> = ({ slides, autoPlay = true, interval =
               </a>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Navigation Arrows */}
-      <button 
-        className="nav-arrow prev-arrow" 
-        onClick={prevSlide}
-        aria-label="Previous slide"
-      >
-        &lt;
-      </button>
-      <button 
-        className="nav-arrow next-arrow" 
-        onClick={nextSlide}
-        aria-label="Next slide"
-      >
-        &gt;
-      </button>
-
-      {/* Indicators */}
-      <div className="indicators">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`indicator ${currentSlide === index ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
         ))}
       </div>
     </div>

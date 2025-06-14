@@ -1,0 +1,61 @@
+/* components/Marquee.css */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee linear infinite;
+}
+
+.marquee-reverse {
+  animation-name: marquee-reverse;
+}
+
+.marquee-pause-on-hover:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Responsive styles */
+.marquee-content {
+  animation-duration: var(--desktop-duration);
+}
+
+@media (max-width: 768px) {
+  .marquee-content {
+    animation-duration: var(--mobile-duration);
+  }
+
+  /* Adjust font size for mobile if needed */
+  .marquee-container {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for small mobile devices */
+  .marquee-container {
+    padding: 8px 0;
+  }
+}

@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import AdminLogin from "./Admin/Login/Login";
-import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./Admin/dashboard/Dashboard";
 import PrivateAdminRoute from "./components/PrivateAdminRoute";
 import Home from "./pages/home/Home";
 import Footer from "./components/Footer/Footer";
-import Counter from "./pages/home/Numbers/Counter";
 import About from "./components/About/About";
 import AdvisoryBoard from "./components/AdvisoryBoard/AdvisoryBoard";
 import ExecutiveBoard from "./components/ExecutiveBoard/ExecutiveBoard";
@@ -13,6 +11,8 @@ import ClubHome from "./components/Clubs/ClubHome";
 import MobileNavbar from "./components/Navbar/MobileNavbar";
 import Contact from "./components/Contact/Contact";
 import Club from "./components/Clubs/Club";
+import Navbar from "./components/Navbar/Navbar";
+// import Headline from "./pages/home/Headline";
 
 function AppRoutes() {
   const location = useLocation();
@@ -26,6 +26,7 @@ function AppRoutes() {
       {!hideNavbar &&
         <div>
           <Navbar />
+          
           <MobileNavbar />
         </div>
         
