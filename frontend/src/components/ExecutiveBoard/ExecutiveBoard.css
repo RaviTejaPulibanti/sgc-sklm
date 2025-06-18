@@ -1,35 +1,56 @@
-/* Executive Board Component - Complete CSS with Animated Heading & Borders */
+/* Executive Board Component - 3 Column Desktop Layout */
 .executive-board {
-  width: 100vw;
-  margin:  0;
-  padding: 6rem 2rem 2rem;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 7rem 0 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   box-sizing: border-box; 
+  box-sizing: border-box;
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
- background: url('https://img.freepik.com/free-vector/gradient-abstract-wireframe-background_23-2149009903.jpg?semt=ais_hybrid&w=740') no-repeat center center ;
- background-size: cover;
- overflow: hidden;
- 
+  overflow: hidden;
+  background: #f9fafb; /* Light background color */
 }
 
-
-/* Animated Heading with Colorful Border */
-.board-title-wrapper {
-  position: relative;
-  background: linear-gradient(90deg, 
-    #3498db, #2ecc71, #e74c3c, #f39c12, #9b59b6, 
-    #3498db);
-  background-size: 300% 100%;
-  animation: gradientFlow 6s linear infinite;
-  padding: 3px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+/* Floating background elements */
+.floating-element {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.1;
+  pointer-events: none;
 }
 
+.floating-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3498db 0%, transparent 70%);
+}
+
+.floating-triangle {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 180px solid rgba(46, 204, 113, 0.2);
+}
+
+.floating-square {
+  width: 150px;
+  height: 150px;
+  background: rgba(155, 89, 182, 0.15);
+}
+
+/* Header styles */
+.board-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+}
 
 .board-title {
   display: inline-block;
@@ -39,11 +60,10 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: #2c3e50;
-  text-align: center;
-  margin: 0;
+  margin: 0 0 1rem;
   position: relative;
   z-index: 2;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .board-title::before {
@@ -67,16 +87,16 @@
   text-align: center;
   font-size: 1.2rem;
   color: #7f8c8d;
-  margin-bottom: 3rem;
+  margin: 0 auto;
   font-weight: 400;
   position: relative;
-  padding: 0.5rem 1rem;
+  max-width: 600px;
 }
 
 .board-subtitle::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
@@ -88,27 +108,16 @@
   border-radius: 3px;
 }
 
-.board-title-wrapper {
-  position: relative;
-  background: linear-gradient(90deg, 
-    #3498db, #2ecc71, #e74c3c, #f39c12, #9b59b6, 
-    #3498db);
-  background-size: 300% 100%;
-  animation: gradientFlow 6s linear infinite;
-  padding: 3px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
-
-/* Card Layout */
+/* Card Layout - Strict 3 columns on desktop */
 .board-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding: 1rem;
+  padding: 0 2rem;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .board-card {
@@ -132,12 +141,6 @@
   border: 2px solid;
   border-image: linear-gradient(45deg, #3498db, #2ecc71, #f39c12) 1;
   animation: borderPulse 2s infinite;
-}
-
-@keyframes borderPulse {
-  0% { border-image-source: linear-gradient(45deg, #3498db, #2ecc71, #f39c12); }
-  50% { border-image-source: linear-gradient(45deg, #f39c12, #3498db, #2ecc71); }
-  100% { border-image-source: linear-gradient(45deg, #2ecc71, #f39c12, #3498db); }
 }
 
 /* Dynamic Profile Image */
@@ -234,68 +237,29 @@
   color: white; 
 }
 
-/* Background Decorations */
-.bg-circle {
-  position: fixed;
-  border-radius: 50%;
-  background: rgba(52, 152, 219, 0.1);
-  z-index: -1;
-  animation: float 8s ease-in-out infinite;
+/* Animations */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.bg-circle-1 {
-  width: 300px;
-  height: 300px;
-  top: 10%;
-  left: 5%;
-  background: radial-gradient(circle, rgba(52,152,219,0.1) 0%, rgba(52,152,219,0) 70%);
-}
-
-.bg-circle-2 {
-  width: 400px;
-  height: 400px;
-  bottom: 10%;
-  right: 5%;
-  background: radial-gradient(circle, rgba(46,204,113,0.1) 0%, rgba(46,204,113,0) 70%);
-  animation-delay: 1s;
-}
-
-.bg-circle-3 {
-  width: 200px;
-  height: 200px;
-  top: 50%;
-  right: 15%;
-  background: radial-gradient(circle, rgba(231,76,60,0.1) 0%, rgba(231,76,60,0) 70%);
-  animation-delay: 2s;
+@keyframes borderPulse {
+  0% { border-image-source: linear-gradient(45deg, #3498db, #2ecc71, #f39c12); }
+  50% { border-image-source: linear-gradient(45deg, #f39c12, #3498db, #2ecc71); }
+  100% { border-image-source: linear-gradient(45deg, #2ecc71, #f39c12, #3498db); }
 }
 
 /* Responsive Breakpoints */
-@media (min-width: 1200px) {
+@media (min-width: 1800px) {
   .board-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card-image-container {
-    width: 70%;
-    padding-bottom: 70%;
+    padding: 0 4rem;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .board-container {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  }
-  .card-image-container {
-    width: 60%;
-    padding-bottom: 60%;
-  }
-  .board-title {
-    font-size: 2.2rem;
-    padding: 0.5rem 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -308,34 +272,28 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .executive-board {
-    margin-top: 5rem;
-    padding: 1.5rem;
+    padding-top: 6rem;
   }
   .board-container {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
   .board-title {
     font-size: 1.8rem;
     padding: 0.5rem 1.2rem;
   }
-  .card-image-container {
-    width: 55%;
-    padding-bottom: 55%;
+  .floating-element {
+    opacity: 0.08;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 480px) {
   .executive-board {
-    margin-top: 4rem;
-    padding: 1rem;
-  }
-  .board-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .board-title {
     font-size: 1.6rem;
@@ -343,42 +301,12 @@
   }
   .board-subtitle {
     font-size: 1rem;
-    margin-bottom: 2rem;
   }
   .card-image-container {
     width: 50%;
     padding-bottom: 50%;
   }
-  .card-name {
-    font-size: 1.2rem;
-  }
-  .card-position {
-    font-size: 1rem;
+  .floating-element {
+    display: none;
   }
 }
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.board-card {
-  animation: fadeInUp 0.5s ease forwards;
-  opacity: 0;
-}
-
-.board-card:nth-child(1) { animation-delay: 0.1s; }
-.board-card:nth-child(2) { animation-delay: 0.2s; }
-.board-card:nth-child(3) { animation-delay: 0.3s; }
-.board-card:nth-child(4) { animation-delay: 0.4s; }
-.board-card:nth-child(5) { animation-delay: 0.5s; }
-.board-card:nth-child(6) { animation-delay: 0.6s; }
-.board-card:nth-child(7) { animation-delay: 0.7s; }
-.board-card:nth-child(8) { animation-delay: 0.8s; }

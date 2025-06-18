@@ -21,261 +21,201 @@ const ExecutiveBoard: React.FC = () => {
   const boardMembers: BoardMember[] = [
     {
       id: 1,
-      name: 'John Smith',
+      name: 'Mr. Ravi Gedela',
       position: 'Chairman',
       image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
     },
     {
       id: 2,
-      name: 'Sarah Johnson',
+      name: 'Mr. P.Kutti',
       position: 'Vice Chairman',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      // department: 'Operations',
-      social: {
-        linkedin: '#',
-        facebook: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/women/1.jpg',
+      department: 'Operations',
     },
     {
       id: 3,
-      name: 'John Smith',
+      name: 'Mrs. R.Deepa',
       position: 'Vice Chairman',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/men/2.jpg',
+      department: 'Technology',
     },
     {
       id: 4,
-      name: 'John Smith',
+      name: 'Mr. T.Narashimaappadu',
       position: 'Vice Chairman',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/women/2.jpg',
+      department: 'Finance',
     },
     {
       id: 5,
-      name: 'John Smith',
+      name: 'K. Guna Sri',
       position: 'President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/men/3.jpg',
+      department:'CSE',
     },
     {
       id: 6,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'K. Jai Sheel',
+      position: 'Vice President (CSE)',
+      image: 'https://randomuser.me/api/portraits/women/3.jpg',
+      department:'CSE',
     },
     {
       id: 7,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'K. Pavan Kumar',
+      position: 'Vice President (ECE)',
+      image: 'https://randomuser.me/api/portraits/men/4.jpg',
+      department:'ECE',
     },
     {
       id: 8,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'Vyshnavi',
+      position: 'Vice President (CIVIL)',
+      image: 'https://randomuser.me/api/portraits/women/4.jpg',
+      department:'CIVIL',
     },
     {
       id: 9,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'G. Rakesh',
+      position: 'Vice President (MECH)',
+      image: 'https://randomuser.me/api/portraits/men/5.jpg',
+      department:'MECH',
     },
     {
       id: 10,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'G. Nishanth Reddy',
+      position: 'Vice President (EEE)',
+      image: 'https://randomuser.me/api/portraits/women/5.jpg',
+      department:'EEE',
     },
     {
       id: 11,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'K. Smily Grace',
+      position: 'Vice President (PUC)',
+      image: 'https://randomuser.me/api/portraits/men/6.jpg',
+      department:'CSE',
     },
     {
       id: 12,
-      name: 'John Smith',
-      position: 'Vice President',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'D. Sandhya',
+      position: 'Vice President (PUC)',
+      image: 'https://randomuser.me/api/portraits/women/6.jpg',
+      department:'ECE',
     },
     {
       id: 13,
-      name: 'John Smith',
+      name: 'Y. Srinivas',
       position: 'Public Relations Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/men/7.jpg',
+      department:'ECE',
     },
     {
       id: 14,
-      name: 'John Smith',
+      name: 'P. Gangadhar',
       position: 'Associate Public Relations Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/women/7.jpg',
+      department:'CSE',
     },
     {
       id: 15,
-      name: 'John Smith',
-      position: 'Associate Public Relations Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'N. Govardhan',
+      position: 'Associate Public Realtions Manager',
+      image: 'https://randomuser.me/api/portraits/men/8.jpg',
+      department:'ECE',
     },
     {
       id: 16,
-      name: 'John Smith',
-      position: 'Associate Public Relations Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
-    },
-    {
-      id: 21,
-      name: 'John Smith',
+      name: 'K. Gayathri',
       position: 'Social Media Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/women/8.jpg',
+      department:'ECE',
     },
     {
       id: 17,
-      name: 'John Smith',
+      name: 'P. Gireesh Satya',
       position: 'Associate Social Media Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/men/9.jpg',
+      department:'EEE',
     },
     {
       id: 18,
-      name: 'John Smith',
+      name: 'Ch. Jeevan Sai',
       position: 'Associate Social Media Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/women/9.jpg',
+      department:'CSE',
     },
     {
       id: 19,
-      name: 'John Smith',
+      name: 'Harish',
       position: 'Associate Web Operations Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      image: 'https://randomuser.me/api/portraits/men/10.jpg',
+      department: 'CSE',
     },
     {
       id: 20,
-      name: 'John Smith',
-      position: 'Web Operations Manager',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-      }
+      name: 'Raviteja',
+      position: 'Web operations Manager',
+      image: '',
+      department: 'CSE',
     },
   ];
 
-  // Background circle elements
- const BackgroundCircles = () => (
-  <>
-    <motion.div 
-      className="bg-circle bg-circle-1"
-      animate={{
-        x: [0, 50, 0],
-        y: [0, -30, 0],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut'
-      }}
-    />
-    <motion.div 
-      className="bg-circle bg-circle-2"
-      animate={{
-        x: [0, -40, 0],
-        y: [0, 20, 0],
-      }}
-      transition={{
-        duration: 25,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut'
-      }}
-    />
-    <motion.div 
-      className="bg-circle bg-circle-3"
-      animate={{
-        x: [0, 30, 0],
-        y: [0, 40, 0],
-      }}
-      transition={{
-        duration: 30,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut'
-      }}
-    />
-  </>
-);
+  // Floating background elements for all devices
+  const FloatingElements = () => (
+    <>
+      {/* Floating circles */}
+      <motion.div 
+        className="floating-element floating-circle"
+        initial={{ x: -100, y: -50 }}
+        animate={{
+          x: [0, 100, 0, -100, 0],
+          y: [0, -50, 0, 50, 0],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'easeInOut'
+        }}
+      />
+      
+      {/* Floating triangles */}
+      <motion.div 
+        className="floating-element floating-triangle"
+        initial={{ x: 100, y: 100 }}
+        animate={{
+          x: [0, -80, 0, 80, 0],
+          y: [0, 60, 0, -60, 0],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'easeInOut'
+        }}
+      />
+      
+      {/* Floating squares */}
+      <motion.div 
+        className="floating-element floating-square"
+        initial={{ x: -150, y: 150 }}
+        animate={{
+          x: [0, 120, 0, -120, 0],
+          y: [0, -80, 0, 80, 0],
+          rotate: [0, 90, 180, 270, 360],
+        }}
+        transition={{
+          duration: 35,
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'easeInOut'
+        }}
+      />
+    </>
+  );
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -333,9 +273,11 @@ const ExecutiveBoard: React.FC = () => {
 
   return (
     <div className="executive-board">
-      <BackgroundCircles />
-      <h1 className="board-title">Executive Board</h1>
-      <p className="board-subtitle">Leadership that drives our vision forward</p>
+      <FloatingElements />
+      <div className="board-header">
+        <h1 className="board-title">Executive Board</h1>
+        <p className="board-subtitle">Leadership that drives our vision forward</p>
+      </div>
       
       <motion.div
         className="board-container"
@@ -343,12 +285,13 @@ const ExecutiveBoard: React.FC = () => {
         initial="hidden"
         animate="visible"
       >
-        {boardMembers.map((member) => (
+        {boardMembers.map((member, index) => (
           <motion.div
             key={member.id}
             className={`board-card ${getCardClass(member.position)}`}
             variants={cardVariants}
             whileHover="hover"
+            custom={index}
           >
             <div className="card-image-container">
               <img src={member.image} alt={member.name} className="card-image" />
