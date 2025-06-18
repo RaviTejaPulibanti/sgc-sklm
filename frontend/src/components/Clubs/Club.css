@@ -25,6 +25,8 @@
 body {
   font-family: var(--font-body);
   overflow-x: hidden;
+  margin:0;
+  padding:0;
 }
 
 .club-container {
@@ -65,6 +67,17 @@ body {
   text-align: center;
   margin-bottom: 40px;
   padding: 0 20px;
+  background: url('https://t3.ftcdn.net/jpg/12/30/56/12/360_F_1230561205_VaYop7lbLgnwJIVBjlyelXcA3NJThUGA.jpg') center center scroll;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  height:100vh;
 }
 
 .club-title {
@@ -103,16 +116,6 @@ body {
   border-radius: 5px;
 }
 
-/* Full Width Hero Image */
-.full-width-hero-container {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  overflow: hidden;
-}
 
 .full-width-hero {
   width: 100%;
@@ -133,41 +136,43 @@ body {
 /* Full Width About Section */
 .full-width-about-container {
   width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #f8f9fa;
-  padding: 60px 0;
+  color:white;
+  /* background: rgba(0, 0, 0, 0.2); Semi-transparent dark background */
+  /* backdrop-filter: blur(5px); */
+ position:absolute;
+ left:0;
+ bottom: 0;
+  padding: 20px;
+  transform: (-50%);
+  z-index:100;
 }
 
 .full-width-about {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0 
+ 
 }
 
 .about-content {
-  padding: 0 20px;
-  text-align: center;
+  padding: 0;
+  text-align: left;
 }
 
 .about-content h2 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--dark);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color:white;
 }
 
 .about-text {
   font-family: var(--font-about);
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 1.5rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1rem;
+  font-weight:500;
+  line-height: 1.5;
+  color:white;
+  margin-bottom: 0;
+  
 }
 
 /* Events Section */
@@ -175,6 +180,7 @@ body {
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 20px;
+  /* background-color: #000; */
 }
 
 .events-grid {
@@ -188,7 +194,7 @@ body {
   background: white;
   border-radius: 10px;
   padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
 }
 
 .event-card h3 {
@@ -295,17 +301,45 @@ body {
   .club-container {
     margin-top: 90px;
   }
+  
+  .club-header{
+    background-position: right center;
+    height: 100vh;
+
+  }
+
+   .full-width-about-container {
+    width: 100vw;
+    left: 50%;
+    right: 50% ;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 20px;
+    background: linear-gradient(
+      to top, 
+      rgba(0, 0, 0, 0.8) 0%, 
+      rgba(0, 0, 0, 0.6) 50%, 
+      transparent 100%
+    );
+    
+  }
 
   .full-width-hero {
     height: 40vh;
   }
+  .full-width-about {
+     max-width: 100% !important;
+    padding: 0 15px;
+  }
 
   .about-content h2 {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    margin-bottom:0.5rem;
   }
 
   .about-text {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.4; 
   }
 
   .events-grid {
@@ -322,6 +356,17 @@ body {
 }
 
 @media (max-width: 480px) {
+  .full-width-about {
+    max-width: 250px;
+    padding: 8px;
+  }
+   .about-content h2 {
+    font-size: 1.1rem;
+  }
+  
+  .about-text {
+    font-size: 0.75rem;
+  }
   .club-title {
     font-size: 2.2rem;
   }

@@ -73,31 +73,6 @@ const Club: React.FC = () => {
 
   return (
     <div className="club-container">
-      {/* Floating Books */}
-      <motion.div 
-        className="floating-book book-1"
-        initial={{ opacity: 0, y: 50 }}
-        animate={bookControls}
-      >
-        📘
-      </motion.div>
-
-      <motion.div 
-        className="floating-book book-2"
-        initial={{ opacity: 0, y: 50 }}
-        animate={bookControls2}
-      >
-        📕
-      </motion.div>
-
-      <motion.div 
-        className="floating-book book-3"
-        initial={{ opacity: 0, y: 50 }}
-        animate={bookControls3}
-      >
-        📗
-      </motion.div>
-
       {/* Club Header */}
       <motion.div 
         className="club-header"
@@ -111,26 +86,7 @@ const Club: React.FC = () => {
           <span className="title-part club">Club</span>
         </h1>
         <div className="colorful-underline"></div>
-      </motion.div>
-
-      {/* Full Width Hero Image */}
-      <div className="full-width-hero-container">
-        <motion.div
-          className="full-width-hero"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-            alt="Club members working together" 
-            className="hero-image"
-          />
-        </motion.div>
-      </div>
-
-      {/* Full Width About Section */}
-      <div className="full-width-about-container">
+         <div className="full-width-about-container">
         <motion.section 
           className="full-width-about"
           initial={{ opacity: 0, x: -50 }}
@@ -140,6 +96,28 @@ const Club: React.FC = () => {
         >
           <div className="about-content">
             <h2>About Our Club</h2>
+             <motion.div 
+        className="floating-book book-2"
+        initial={{ opacity: 0, y: 50 }}
+        animate={bookControls2}
+      >
+        📕
+      </motion.div>
+       <motion.div 
+        className="floating-book book-1"
+        initial={{ opacity: 0, y: 50 }}
+        animate={bookControls}
+      >
+        📘
+      </motion.div>
+       <motion.div 
+        className="floating-book book-3"
+        initial={{ opacity: 0, y: 50 }}
+        animate={bookControls3}
+      >
+        📗
+      </motion.div>
+
             <p className="about-text">
               The Tech Innovators Club is a vibrant community of technology enthusiasts dedicated to exploring 
               cutting-edge innovations, sharing knowledge, and building meaningful connections. Founded in 2015, 
@@ -153,6 +131,10 @@ const Club: React.FC = () => {
           </div>
         </motion.section>
       </div>
+      </motion.div>
+
+     
+     
 
       {/* Events Section */}
       <motion.section 

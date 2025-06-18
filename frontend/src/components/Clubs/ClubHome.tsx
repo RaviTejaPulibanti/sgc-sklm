@@ -1,107 +1,110 @@
 import { motion } from "framer-motion";
-
 import "./ClubHome.css";
+
+// club images
+import codingImg from "../../clubimgs/coding.webp";
+import photographyImg from "../../clubimgs/photography.webp"
 
 const clubs = [
    {
     id: 1,
-    name: "Coding Club",
+    name: "Arts & Crafts Club",
     description: "Learn to code and build amazing projects with fellow developers.",
-    image: "https://source.unsplash.com/random/300x200/?coding"
+    image: codingImg
   },
   {
     id: 2,
-    name: "Photography Club",
+    name: "Cultural & Choreography Club",
     description: "Capture moments and learn photography techniques from experts.",
-    image: "https://source.unsplash.com/random/300x200/?photography"
+    image: photographyImg
   },
   {
     id: 3,
-    name: "Music Club",
+    name:  "Designing + Photography Club ",
     description: "Jam with musicians and explore different genres of music.",
     image: "https://source.unsplash.com/random/300x200/?music"
   },
   {
     id: 4,
-    name: "Dance Club",
+    name: "Internship & Career Opportunities Club ",
     description: "Express yourself through movement and learn various dance styles.",
     image: "https://source.unsplash.com/random/300x200/?dance"
   },
   {
     id: 5,
-    name: "Debate Club",
+    name: "Competitive Exams Club",
     description: "Sharpen your public speaking and critical thinking skills.",
     image: "https://source.unsplash.com/random/300x200/?debate"
   },
   {
     id: 6,
-    name: "Robotics Club",
+    name: "Coding Club",
     description: "Build robots and compete in exciting challenges.",
     image: "https://source.unsplash.com/random/300x200/?robotics"
   },
   {
     id: 7,
-    name: "Chess Club",
+    name: "Electronics Club",
     description: "Improve your strategic thinking with friendly chess matches.",
     image: "https://source.unsplash.com/random/300x200/?chess"
   },
   {
     id: 8,
-    name: "Art Club",
+    name: "Eco Club",
     description: "Explore your creativity through various art mediums.",
     image: "https://source.unsplash.com/random/300x200/?art"
   },
   {
     id: 9,
-    name: "Book Club",
+    name: "Sports & Games Club ",
     description: "Discuss literature and discover new favorite books.",
     image: "https://source.unsplash.com/random/300x200/?books"
   },
   {
     id: 10,
-    name: "Environmental Club",
+    name: "Yoga Club",
     description: "Work towards a sustainable future and protect our planet.",
     image: "https://source.unsplash.com/random/300x200/?nature"
   },
   {
     id: 11,
-    name: "Film Club",
+    name: "Lecture Series  Club ",
     description: "Watch and analyze films from different genres and eras.",
     image: "https://source.unsplash.com/random/300x200/?movie"
   },
   {
     id: 12,
-    name: "Entrepreneurship Club",
+    name: "Linguistic & Personality Development Club ",
     description: "Develop business ideas and learn startup fundamentals.",
     image: "https://source.unsplash.com/random/300x200/?business"
   },
   {
     id: 13,
-    name: "Science Club",
+    name: "Research Club",
     description: "Conduct experiments and explore scientific concepts.",
     image: "https://source.unsplash.com/random/300x200/?science"
   },
   {
     id: 14,
-    name: "Cooking Club",
+    name: "Finance Club",
     description: "Learn culinary skills and try recipes from around the world.",
     image: "https://source.unsplash.com/random/300x200/?cooking"
   },
   {
     id: 15,
-    name: "Sports Club",
+    name: "Robotics Club ",
     description: "Stay active and compete in various sports activities.",
     image: "https://source.unsplash.com/random/300x200/?sports"
   },
   {
     id: 16,
-    name: "Theater Club",
+    name: "Higher Education Club ",
     description: "Act, direct, and produce plays with fellow theater enthusiasts.",
     image: "https://source.unsplash.com/random/300x200/?theater"
   },
   {
     id: 17,
-    name: "Language Club",
+    name: "Startup Club",
     description: "Learn new languages and explore different cultures.",
     image: "https://source.unsplash.com/random/300x200/?language"
   },

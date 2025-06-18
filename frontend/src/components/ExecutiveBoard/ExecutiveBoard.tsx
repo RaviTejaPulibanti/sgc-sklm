@@ -3,6 +3,16 @@ import { motion } from 'framer-motion';
 import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 import './ExecutiveBoard.css';
 
+//members images
+import pr from "../../executiveimgs/pr.webp"
+import apr1 from "../../executiveimgs/apr1.webp"
+import apr2 from "../../executiveimgs/apr2.webp"
+import pucVp1 from "../../executiveimgs/pucVp1.webp"
+import pucvp2 from "../../executiveimgs/pucvp2.webp"
+import civilvp from "../../executiveimgs/civilvp.webp"
+import sm from "../../executiveimgs/sm.webp"
+
+
 interface BoardMember {
   id: number;
   name: string;
@@ -24,6 +34,9 @@ const ExecutiveBoard: React.FC = () => {
       name: 'Mr. Ravi Gedela',
       position: 'Chairman',
       image: 'https://randomuser.me/api/portraits/men/1.jpg',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/ravi-gedela-123456789/'
+      }
     },
     {
       id: 2,
@@ -31,6 +44,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice Chairman',
       image: 'https://randomuser.me/api/portraits/women/1.jpg',
       department: 'Operations',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/p-kutti-123456789/'
+      }
     },
     {
       id: 3,
@@ -38,6 +54,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice Chairman',
       image: 'https://randomuser.me/api/portraits/men/2.jpg',
       department: 'Technology',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/r-deepa-123456789/'
+      }
     },
     {
       id: 4,
@@ -45,6 +64,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice Chairman',
       image: 'https://randomuser.me/api/portraits/women/2.jpg',
       department: 'Finance',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/t-narashimaappadu-123456789/'
+      }
     },
     {
       id: 5,
@@ -52,6 +74,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'President',
       image: 'https://randomuser.me/api/portraits/men/3.jpg',
       department:'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/kimidi-gunasri-38151931a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 6,
@@ -59,6 +84,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice President (CSE)',
       image: 'https://randomuser.me/api/portraits/women/3.jpg',
       department:'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/jaisheel-karlapudi-b5a558325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 7,
@@ -66,13 +94,19 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice President (ECE)',
       image: 'https://randomuser.me/api/portraits/men/4.jpg',
       department:'ECE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/kyvpkr/'
+      }
     },
     {
       id: 8,
       name: 'Vyshnavi',
       position: 'Vice President (CIVIL)',
-      image: 'https://randomuser.me/api/portraits/women/4.jpg',
+      image: civilvp,
       department:'CIVIL',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/vyeshnavi-kandapu-5a3033322?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 9,
@@ -80,6 +114,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice President (MECH)',
       image: 'https://randomuser.me/api/portraits/men/5.jpg',
       department:'MECH',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/g-rakesh-123456789/'
+      }
     },
     {
       id: 10,
@@ -87,48 +124,69 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Vice President (EEE)',
       image: 'https://randomuser.me/api/portraits/women/5.jpg',
       department:'EEE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/nishanth-reddy-1174a735b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 11,
       name: 'K. Smily Grace',
       position: 'Vice President (PUC)',
-      image: 'https://randomuser.me/api/portraits/men/6.jpg',
+      image: pucvp2,
       department:'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/smily-grace-kommala-1b6552325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 12,
       name: 'D. Sandhya',
       position: 'Vice President (PUC)',
-      image: 'https://randomuser.me/api/portraits/women/6.jpg',
+      image: pucVp1,
       department:'ECE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/sandhya-desetti-b04686297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 13,
       name: 'Y. Srinivas',
       position: 'Public Relations Manager',
-      image: 'https://randomuser.me/api/portraits/men/7.jpg',
+      image: pr,
       department:'ECE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/srinivas262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 14,
       name: 'P. Gangadhar',
       position: 'Associate Public Relations Manager',
-      image: 'https://randomuser.me/api/portraits/women/7.jpg',
+      image: apr1,
       department:'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/gangadhar-pamisetty-3ba74131b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 15,
       name: 'N. Govardhan',
       position: 'Associate Public Realtions Manager',
-      image: 'https://randomuser.me/api/portraits/men/8.jpg',
+      image: apr2,
       department:'ECE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/neelanti-govardhan-5548aa320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 16,
       name: 'K. Gayathri',
       position: 'Social Media Manager',
-      image: 'https://randomuser.me/api/portraits/women/8.jpg',
+      image: sm,
       department:'ECE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/gayathri-killada-6461b4267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 17,
@@ -136,6 +194,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Associate Social Media Manager',
       image: 'https://randomuser.me/api/portraits/men/9.jpg',
       department:'EEE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/gireesh-satya-170358370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 18,
@@ -143,6 +204,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Associate Social Media Manager',
       image: 'https://randomuser.me/api/portraits/women/9.jpg',
       department:'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/chukka-jeevan-sai-530400335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+      }
     },
     {
       id: 19,
@@ -150,6 +214,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Associate Web Operations Manager',
       image: 'https://randomuser.me/api/portraits/men/10.jpg',
       department: 'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/harish-123456789/'
+      }
     },
     {
       id: 20,
@@ -157,6 +224,9 @@ const ExecutiveBoard: React.FC = () => {
       position: 'Web operations Manager',
       image: '',
       department: 'CSE',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/raviteja-123456789/'
+      }
     },
   ];
 
@@ -294,7 +364,7 @@ const ExecutiveBoard: React.FC = () => {
             custom={index}
           >
             <div className="card-image-container">
-              <img src={member.image} alt={member.name} className="card-image" />
+              <img src={member.image || 'https://via.placeholder.com/150'} alt={member.name} className="card-image" />
             </div>
             <div className="card-content">
               <h3 className="card-name">{member.name}</h3>
