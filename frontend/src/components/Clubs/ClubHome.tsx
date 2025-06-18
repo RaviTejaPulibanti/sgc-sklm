@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import "./ClubHome.css";
 
 const clubs = [
@@ -186,6 +187,7 @@ const ClubHome = () => {
             <motion.div
               key={club.id}
               className="club-card"
+              //@ts-ignore
               variants={cardVariants}
               whileHover="hover"
             >

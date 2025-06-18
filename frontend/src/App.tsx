@@ -43,7 +43,7 @@ function AppRoutes() {
         <Route path="/advisory-board" element={<AdvisoryBoard />} />
         <Route path="/executive-board" element={<ExecutiveBoard />} />
         <Route path="/clubs" element={<ClubHome />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact-us" element={<Contact />} />
 
         <Route path='/club' element={<Club />} />
       </Routes>

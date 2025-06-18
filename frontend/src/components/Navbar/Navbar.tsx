@@ -187,21 +187,21 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Home', icon: <FaHome />, path: '#', dropdown: null },
+    { name: 'Home', icon: <FaHome />, path: '/', dropdown: null },
     { 
         name: 'Advisory & Executive Board',
         icon: <FaChalkboardTeacher />,
         path: '#',
         dropdown: [
-          { name: 'Advisory Board', icon: <FaGraduationCap />, path: '#' },
-          { name: 'Executive Board', icon: <FaGraduationCap />, path: '#' },
-          { name: 'Members', icon: <FaGraduationCap />, path: '#' },
+          { name: 'Advisory Board', icon: <FaGraduationCap />, path: '/advisory-board' },
+          { name: 'Executive Board', icon: <FaGraduationCap />, path: '/executive-board' },
+          { name: 'Members', icon: <FaGraduationCap />, path: '/members' },
         ]
 
     },
-    { name: 'About', icon: <FaInfoCircle />, path: '#', dropdown: null },
-    { name: 'News & Events', icon: <FaNewspaper />, path: '#', dropdown: null },
-      { name: 'Contact', icon: <FaEnvelope />, path: '#', dropdown: null },
+    { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
+    { name: 'News & Events', icon: <FaNewspaper />, path: '/events', dropdown: null },
+      { name: 'Clubs', icon: <FaEnvelope />, path: '/clubs', dropdown: null },
       {
         name: 'Reports', icon : <FaNewspaper /> , path: '#', dropdown: [
               { name: 'AY 2022-23', icon: null, path: '#' },
@@ -213,6 +213,7 @@ const Navbar = () => {
 
   return (
     <>
+      
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}` }>
         <div className="navbar-container">
           {/* Logo Section */}
@@ -260,6 +261,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
@@ -300,6 +302,7 @@ const Navbar = () => {
        
       </div>
       {/* <Headline /> */}
+      
     </>
   );
 };

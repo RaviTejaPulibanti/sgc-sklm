@@ -348,4 +348,7 @@
   .college-name {
     font-size: 1.3rem;
   }
+  .navbar {
+    display: none;
+  }
 }

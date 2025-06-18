@@ -1,225 +1,188 @@
-// components/MobileNavbar.tsx
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
-  Bars3Icon, 
-  XMarkIcon, 
-  ChevronDownIcon, 
-  ChevronUpIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  MapPinIcon
-} from '@heroicons/react/24/outline';
-import { 
-  FacebookIcon, 
-  TwitterIcon, 
-  XIcon,
-  EmailIcon
-} from 'react-share';
+  FaFacebook, 
+  FaTwitter, 
+  FaInstagram, 
+  FaLinkedin, 
+  FaSearch, 
+  FaUser,
+  FaHome,
+  FaInfoCircle,
+  FaUsers,
+  FaCalendarAlt,
+  FaUserTie,
+  FaFileAlt
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom'; 
+import './MobileNavbar.css';
 
 const MobileNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-  const navbarRef = useRef<HTMLDivElement>(null);
+  const [expandedReport, setExpandedReport] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const navRef = useRef<HTMLDivElement>(null);
 
   // Close navbar when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setIsOpen(false);
-        setOpenSubmenu(null);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [isOpen]);
 
-  const toggleSubmenu = (menu: string) => {
-    setOpenSubmenu(openSubmenu === menu ? null : menu);
+  // Prevent body scroll when navbar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
+
+  const toggleNav = () => {
+    setIsOpen(!isOpen);
+    setExpandedReport(null);
+  };
+
+  const toggleReport = (year: string) => {
+    setExpandedReport(expandedReport === year ? null : year);
   };
 
   return (
-    <nav className="md:hidden fixed w-full z-50 bg-white shadow-sm" ref={navbarRef}>
-      <div className="">
-        <div className="flex h-16 items-center justify-between px-4 border-b border-gray-100">
-          <div className="flex items-center">
-            <img
-              className="h-10 w-auto"
-              src="/college-logo.png"
-              alt="College Logo"
+    <>
+      {/* Mobile Header Bar */}
+      <div className="mobile-header">
+        <div className="mobile-header-left">
+          <FaUser className="user-icon" />
+        </div>
+        
+        <div className="mobile-header-center">
+          <div className="search-bar">
+            <FaSearch className="search-icon" />
+            <input 
+              type="text" 
+              placeholder="@sgc...." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          <div className="flex items-center">
-            <button
-              onClick={() => {
-                setIsOpen(!isOpen);
-                setOpenSubmenu(null);
-              }}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
-            >
-              {isOpen ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
+        </div>
+        
+        <div className="mobile-header-right">
+          <div className="mobile-menu-button" onClick={toggleNav}>
+            ☰
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {isOpen && <div className="nav-overlay"></div>}
+
+      {/* Navbar */}
+      <div 
+        ref={navRef} 
+        className={`mobile-navbar ${isOpen ? 'open' : ''}`}
+        style={{ backgroundColor: '#f0f0f0' }} 
+      >
+        <div className="nav-header">
+          <div className="nav-title">Welcome To SGC 💙</div>
+          <button className="close-btn" onClick={toggleNav}>✕</button>
+        </div>
+
+        <div className="nav-section">
+          <div className="section-title">MENU</div>
+          <ul className="nav-list">
+          <li> <Link to="/about" onClick={toggleNav}>
+              <span className='flex gap-2'>
+              <FaHome className="nav-icon" />
+                HOME
+              </span></Link></li>
+            <li> <Link to="/about" onClick={toggleNav}>
+              <span className='flex gap-2'>
+              <FaInfoCircle className="nav-icon" />
+               ABOUT
+              </span></Link></li>
+            <li> <Link to="/clubs" onClick={toggleNav}>
+              <span className='flex gap-2'>
+                <FaUsers className="nav-icon" />
+               CLUBS
+              </span></Link></li>
+            <li> <Link to="/events" onClick={toggleNav}>
+              <span className='flex gap-2'>
+                <FaCalendarAlt className="nav-icon" /> EVENTS
+              </span>
+              </Link></li>
+            <li> <Link to="/members" onClick={toggleNav}>
+              <span className='flex gap-2'>
+                <FaUserTie className="nav-icon" /> MEMBERS
+              </span>
+            </Link></li>
+            
+            <li>
+              <Link to="/executive-board" onClick={toggleNav}>
+              <span className='flex gap-2'>
+                <FaUsers className="nav-icon" /> EXECUTIVE BOARD
+              </span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/advisory-board" onClick={toggleNav}>
+              <span className='flex gap-2'>
+                <FaUsers className="nav-icon" /> ADVISORY BOARD
+              </span>
+              </Link>
+            </li>
+            <li onClick={() => toggleReport('reports')}>
+              <span className='flex gap-2'>
+                <FaFileAlt className="nav-icon" /> REPORTS {expandedReport === 'reports' ? '−' : '+'}
+              </span>
+              {expandedReport === 'reports' && (
+                <ul className="report-years">
+                  <li>2021</li>
+                  <li>2022</li>
+                  <li>2023</li>
+                  <li>2024</li>
+                </ul>
               )}
-            </button>
+            </li>
+          </ul>
+        </div>
+
+        <div className="divider"></div>
+
+        <div className="nav-section">
+          <div className="section-title">CONTACT INFO</div>
+          <div className="flex flex-col gap-3">
+            <p>Suvarnamuki, Srikakulam.</p>
+            <p>+91 99999 99999</p>
+            <p>help@sgcrguktskim.org</p>
+            <p>Office Hours: 8AM - 6PM</p>
+            <p>Monday to Saturday</p>
           </div>
         </div>
 
-        {isOpen && (
-          <div className="absolute right-0 w-72 bg-white shadow-xl border-l border-gray-100">
-            <div className="px-4 pt-4 pb-6 space-y-2">
-              <a
-                href="#"
-                className="block px-3 py-3 rounded-md text-lg font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </a>
-              <a
-                href="#"
-                className="block px-3 py-3 rounded-md text-lg font-medium text-gray-800 hover:bg-gray-50 border-b border-gray-100"
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </a>
-              
-              {/* Courses with dropdown */}
-              <div className="border-b border-gray-100">
-                <button
-                  onClick={() => toggleSubmenu('courses')}
-                  className="w-full flex justify-between items-center px-3 py-3 rounded-md text-lg font-medium text-gray-800 hover:bg-gray-50"
-                >
-                  <span>Courses</span>
-                  {openSubmenu === 'courses' ? (
-                    <ChevronUpIcon className="h-5 w-5" />
-                  ) : (
-                    <ChevronDownIcon className="h-5 w-5" />
-                  )}
-                </button>
-                {openSubmenu === 'courses' && (
-                  <div className="pl-4 mt-1 space-y-2 pb-2">
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Undergraduate
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Postgraduate
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Doctoral
-                    </a>
-                  </div>
-                )}
-              </div>
+        <div className="divider"></div>
 
-              {/* Annual Reports with dropdown */}
-              <div className="border-b border-gray-100">
-                <button
-                  onClick={() => toggleSubmenu('reports')}
-                  className="w-full flex justify-between items-center px-3 py-3 rounded-md text-lg font-medium text-gray-800 hover:bg-gray-50"
-                >
-                  <span>Annual Reports</span>
-                  {openSubmenu === 'reports' ? (
-                    <ChevronUpIcon className="h-5 w-5" />
-                  ) : (
-                    <ChevronDownIcon className="h-5 w-5" />
-                  )}
-                </button>
-                {openSubmenu === 'reports' && (
-                  <div className="pl-4 mt-1 space-y-2 pb-2">
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      2023 Report
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      2022 Report
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      2021 Report
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      2020 Report
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              <div className="px-3 py-4 border-b border-gray-100">
-                <button 
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-md text-lg font-medium transition-all duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Apply Now
-                </button>
-              </div>
-
-              <div className="px-3 py-4 space-y-3 border-b border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-800">Contact Information</h3>
-                <div className="flex items-start space-x-3">
-                  <EnvelopeIcon className="h-5 w-5 text-gray-500 mt-1" />
-                  <p className="text-base text-gray-700">info@college.edu</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <PhoneIcon className="h-5 w-5 text-gray-500 mt-1" />
-                  <p className="text-base text-gray-700">+1 (123) 456-7890</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPinIcon className="h-5 w-5 text-gray-500 mt-1" />
-                  <p className="text-base text-gray-700">123 College St, City</p>
-                </div>
-              </div>
-
-              <div className="px-3 pt-2">
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">Follow Us</h3>
-                <div className="flex space-x-4">
-                  <a href="#" className="text-gray-600 hover:text-blue-600">
-                    <FacebookIcon size={32} round />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-blue-400">
-                    <TwitterIcon size={32} round />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-pink-600">
-                    <XIcon size={32} round />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-blue-700">
-                    <EmailIcon size={32} round />
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div className="nav-section">
+          <div className="section-title">SOCIAL MEDIA INFO</div>
+          <div className="social-icons">
+            <a href="#"><FaFacebook className="icon" /></a>
+            <a href="#"><FaTwitter className="icon" /></a>
+            <a href="#"><FaInstagram className="icon" /></a>
+            <a href="#"><FaLinkedin className="icon" /></a>
           </div>
-        )}
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 

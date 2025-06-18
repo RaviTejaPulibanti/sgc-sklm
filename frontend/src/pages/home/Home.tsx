@@ -44,8 +44,9 @@ const Home: React.FC = () => {
       
       {/* Counter section */}
       <div className="w-full bg-white pt-10 pb-20">
-        <Counter />
+        <Counter />       
       </div>
+
     </div>
   );
 };
