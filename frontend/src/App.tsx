@@ -45,7 +45,7 @@ function AppRoutes() {
         <Route path="/clubs" element={<ClubHome />} />
         <Route path="/contact-us" element={<Contact />} />
 
-        <Route path='/club' element={<Club />} />
+        <Route path='/clubs/:id' element={<Club />} />
       </Routes>
 
       <Footer />

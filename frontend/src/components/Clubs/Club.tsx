@@ -2,8 +2,16 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa';
 import './Club.css';
+import { useParams } from 'react-router-dom';
+import { clubsData } from './ClubsData';
+
 
 const Club: React.FC = () => {
+  const { id } = useParams();
+
+  const club = clubsData.find((e) => e.id === id);
+  if (!club) return <p> page not found </p>
+
   const bookControls = useAnimation();
   const bookControls2 = useAnimation();
   const bookControls3 = useAnimation();
@@ -53,24 +61,12 @@ const Club: React.FC = () => {
     animateBook3();
   }, [bookControls, bookControls2, bookControls3]);
 
-  const members = Array.from({ length: 15 }, (_, i) => ({
-    id: i + 1,
-    name: `Member ${i + 1}`,
-    role: i % 3 === 0 ? 'President' : i % 2 === 0 ? 'Coordinator' : 'Member',
-    linkedin: `https://linkedin.com/in/member${i + 1}`
-  }));
+ 
 
-  const events = [
-    { id: 1, title: 'Tech Conference 2023', date: 'Oct 15, 2023', description: 'Annual technology conference featuring industry leaders' },
-    { id: 2, title: 'Hackathon', date: 'Nov 20, 2023', description: '24-hour coding competition with exciting prizes' },
-    { id: 3, title: 'Workshop Series', date: 'Dec 5-10, 2023', description: 'Week-long workshop on modern web development' },
-    { id: 4, title: 'Networking Night', date: 'Jan 12, 2024', description: 'Connect with industry professionals and alumni' },
-    { id: 5, title: 'Career Fair', date: 'Feb 8, 2024', description: 'Meet potential employers and explore opportunities' },
-    { id: 6, title: 'Project Showcase', date: 'Mar 15, 2024', description: 'Showcase your projects to the community' },
-    { id: 7, title: 'Guest Speaker Series', date: 'Apr 5, 2024', description: 'Learn from industry experts' },
-    { id: 8, title: 'Annual Gala', date: 'May 20, 2024', description: 'Celebrate another successful year' }
-  ];
 
+
+
+  
   return (
     <div className="club-container">
       {/* Floating Books */}
@@ -106,8 +102,8 @@ const Club: React.FC = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="club-title">
-          <span className="title-part tech">Tech</span>
-          <span className="title-part innovators">Innovators</span>
+          <span className="title-part tech">{club.name1}</span>
+          <span className="title-part innovators">{club.name2}</span>
           <span className="title-part club">Club</span>
         </h1>
         <div className="colorful-underline"></div>
@@ -121,9 +117,8 @@ const Club: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-            alt="Club members working together" 
+          <img src={club.heroImage}
+            alt={club.name1}
             className="hero-image"
           />
         </motion.div>
@@ -140,16 +135,9 @@ const Club: React.FC = () => {
         >
           <div className="about-content">
             <h2>About Our Club</h2>
-            <p className="about-text">
-              The Tech Innovators Club is a vibrant community of technology enthusiasts dedicated to exploring 
-              cutting-edge innovations, sharing knowledge, and building meaningful connections. Founded in 2015, 
-              we organize regular events, workshops, and hackathons to foster learning and collaboration.
-            </p>
-            <p className="about-text">
-              Our mission is to create a platform where students can develop technical skills, work on real-world 
-              projects, and connect with industry professionals. Whether you're a beginner or an experienced 
-              developer, there's a place for you in our community.
-            </p>
+            {club.about.map((para, index) => (
+              <p key={index} className="about-text">{para}</p>
+            ))}
           </div>
         </motion.section>
       </div>
@@ -164,7 +152,7 @@ const Club: React.FC = () => {
       >
         <h2>Upcoming Events</h2>
         <div className="events-grid">
-          {events.map(event => (
+          {club.events.map(event => (
             <motion.div 
               key={event.id}
               className="event-card"
@@ -190,7 +178,7 @@ const Club: React.FC = () => {
       >
         <h2>Our Members</h2>
         <div className="members-grid">
-          {members.map(member => (
+          {club.members.map(member => (
             <motion.div 
               key={member.id}
               className="member-card"

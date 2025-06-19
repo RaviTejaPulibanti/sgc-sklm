@@ -1,117 +1,10 @@
 import { motion } from "framer-motion";
 
 import "./ClubHome.css";
+import { clubsData} from "./ClubsData";
+import { Link } from "react-router-dom";
 
-const clubs = [
-   {
-    id: 1,
-    name: "Coding Club",
-    description: "Learn to code and build amazing projects with fellow developers.",
-    image: "https://source.unsplash.com/random/300x200/?coding"
-  },
-  {
-    id: 2,
-    name: "Photography Club",
-    description: "Capture moments and learn photography techniques from experts.",
-    image: "https://source.unsplash.com/random/300x200/?photography"
-  },
-  {
-    id: 3,
-    name: "Music Club",
-    description: "Jam with musicians and explore different genres of music.",
-    image: "https://source.unsplash.com/random/300x200/?music"
-  },
-  {
-    id: 4,
-    name: "Dance Club",
-    description: "Express yourself through movement and learn various dance styles.",
-    image: "https://source.unsplash.com/random/300x200/?dance"
-  },
-  {
-    id: 5,
-    name: "Debate Club",
-    description: "Sharpen your public speaking and critical thinking skills.",
-    image: "https://source.unsplash.com/random/300x200/?debate"
-  },
-  {
-    id: 6,
-    name: "Robotics Club",
-    description: "Build robots and compete in exciting challenges.",
-    image: "https://source.unsplash.com/random/300x200/?robotics"
-  },
-  {
-    id: 7,
-    name: "Chess Club",
-    description: "Improve your strategic thinking with friendly chess matches.",
-    image: "https://source.unsplash.com/random/300x200/?chess"
-  },
-  {
-    id: 8,
-    name: "Art Club",
-    description: "Explore your creativity through various art mediums.",
-    image: "https://source.unsplash.com/random/300x200/?art"
-  },
-  {
-    id: 9,
-    name: "Book Club",
-    description: "Discuss literature and discover new favorite books.",
-    image: "https://source.unsplash.com/random/300x200/?books"
-  },
-  {
-    id: 10,
-    name: "Environmental Club",
-    description: "Work towards a sustainable future and protect our planet.",
-    image: "https://source.unsplash.com/random/300x200/?nature"
-  },
-  {
-    id: 11,
-    name: "Film Club",
-    description: "Watch and analyze films from different genres and eras.",
-    image: "https://source.unsplash.com/random/300x200/?movie"
-  },
-  {
-    id: 12,
-    name: "Entrepreneurship Club",
-    description: "Develop business ideas and learn startup fundamentals.",
-    image: "https://source.unsplash.com/random/300x200/?business"
-  },
-  {
-    id: 13,
-    name: "Science Club",
-    description: "Conduct experiments and explore scientific concepts.",
-    image: "https://source.unsplash.com/random/300x200/?science"
-  },
-  {
-    id: 14,
-    name: "Cooking Club",
-    description: "Learn culinary skills and try recipes from around the world.",
-    image: "https://source.unsplash.com/random/300x200/?cooking"
-  },
-  {
-    id: 15,
-    name: "Sports Club",
-    description: "Stay active and compete in various sports activities.",
-    image: "https://source.unsplash.com/random/300x200/?sports"
-  },
-  {
-    id: 16,
-    name: "Theater Club",
-    description: "Act, direct, and produce plays with fellow theater enthusiasts.",
-    image: "https://source.unsplash.com/random/300x200/?theater"
-  },
-  {
-    id: 17,
-    name: "Language Club",
-    description: "Learn new languages and explore different cultures.",
-    image: "https://source.unsplash.com/random/300x200/?language"
-  },
-  {
-    id: 18,
-    name: "Volunteering Club",
-    description: "Give back to the community through meaningful service projects.",
-    image: "https://source.unsplash.com/random/300x200/?volunteer"
-  }
-];
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -183,7 +76,7 @@ const ClubHome = () => {
           initial="hidden"
           animate="visible"
         >
-          {clubs.map((club) => (
+          {clubsData.map((club) => (
             <motion.div
               key={club.id}
               className="club-card"
@@ -192,15 +85,16 @@ const ClubHome = () => {
               whileHover="hover"
             >
               <div className="club-image-container">
-                <img src={club.image} alt={club.name} className="club-image" />
+                <img src={club.heroImage} alt={club.name1} className="club-image" />
               </div>
               <div className="club-content">
-                <h3 className="club-name">{club.name}</h3>
+                <h2 className="club-name"> {club.name1} {club.name2} Club</h2>
                 <p className="club-description">{club.description}</p>
+                <Link to={`/clubs/${club.id}`}> 
                 <button className="view-club-btn">
-                  View Club
+                   View Club
                   <span className="arrow">→</span>
-                </button>
+                </button></Link>
               </div>
             </motion.div>
           ))}
