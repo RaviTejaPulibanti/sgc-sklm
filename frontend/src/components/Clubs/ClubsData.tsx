@@ -4,7 +4,8 @@ export interface ClubType {
     name2?: string;
     founded: number;
     about: string[];
-    description: string;
+  description: string;
+  image?: string;
     heroImage: string;
     events: {
       id: number;
@@ -32,6 +33,7 @@ export interface ClubType {
         "The Tech Innovators Club is a vibrant community of technology enthusiasts dedicated to exploring cutting-edge innovations, sharing knowledge, and building meaningful connections.",
         "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
       ],
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       heroImage:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       events: [
@@ -94,8 +96,9 @@ export interface ClubType {
           "The Tech Innovators Club is a vibrant community of technology enthusiasts dedicated to exploring cutting-edge innovations, sharing knowledge, and building meaningful connections.",
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
+        image:'./clubimgs/coding.webp' ,
         heroImage:
-              "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+              "./clubBgimgs/codingBg.webp",
         description:
               "Annual technology conference featuring industry leaders",
         events: [

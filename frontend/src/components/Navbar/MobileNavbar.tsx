@@ -62,20 +62,23 @@ const MobileNavbar: React.FC = () => {
       {/* Mobile Header Bar */}
       <div className="mobile-header">
         <div className="mobile-header-left">
-          <FaUser className="user-icon" />
+         <div className="flex items-center gap-2">
+           <img 
+               src="/rgukt_logo.png" 
+               alt="College Logo" 
+               className="h-8 w-auto" 
+            />
+            <img 
+               src="https://sgcrguktsklm.org.in/assets/img/logo/logo1.png" 
+                alt="Organization Logo"
+                className="h-7 w-auto" 
+            />
+       </div>
         </div>
         
-        <div className="mobile-header-center">
-          <div className="search-bar">
-            <FaSearch className="search-icon" />
-            <input 
-              type="text" 
-              placeholder="@sgc...." 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-        </div>
+        {/* <div className="mobile-header-center">
+             <span className="text-white font-medium">SGC</span>
+        </div> */}
         
         <div className="mobile-header-right">
           <div className="mobile-menu-button" onClick={toggleNav}>
@@ -101,7 +104,7 @@ const MobileNavbar: React.FC = () => {
         <div className="nav-section">
           <div className="section-title">MENU</div>
           <ul className="nav-list">
-          <li> <Link to="/about" onClick={toggleNav}>
+          <li> <Link to="/" onClick={toggleNav}>
               <span className='flex gap-2'>
               <FaHome className="nav-icon" />
                 HOME

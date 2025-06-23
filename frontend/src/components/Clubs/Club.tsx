@@ -5,111 +5,54 @@ import './Club.css';
 import { useParams } from 'react-router-dom';
 import { clubsData } from './ClubsData';
 
-
 const Club: React.FC = () => {
   const { id } = useParams();
-
   const club = clubsData.find((e) => e.id === id);
-  if (!club) return <p> page not found </p>
+  if (!club) return <p>Page not found</p>;
 
-  const bookControls = useAnimation();
-  const bookControls2 = useAnimation();
-  const bookControls3 = useAnimation();
+  const controls = useAnimation();
 
   useEffect(() => {
-    const animateBooks = async () => {
-      // First book animation
-      await bookControls.start({ opacity: 1, y: 0 });
-      while (true) {
-        await bookControls.start({
-          x: [0, 20, 0, -20, 0],
-          y: [0, -15, 0, 15, 0],
-          rotate: [0, 5, 0, -5, 0],
-          transition: { duration: 8, repeat: Infinity }
-        });
-      }
+    const sequence = async () => {
+      await controls.start({ opacity: 1, y: 0 });
+      await controls.start({
+        rotate: [0, 5, -5, 0],
+        y: [0, -10, 10, 0],
+        transition: { duration: 8, repeat: Infinity }
+      });
     };
+    sequence();
+  }, [controls]);
 
-    // Second book animation
-    const animateBook2 = async () => {
-      await bookControls2.start({ opacity: 1, y: 0 });
-      while (true) {
-        await bookControls2.start({
-          x: [0, -25, 0, 25, 0],
-          y: [0, 20, 0, -20, 0],
-          rotate: [0, -8, 0, 8, 0],
-          transition: { duration: 10, repeat: Infinity }
-        });
-      }
-    };
-
-    // Third book animation
-    const animateBook3 = async () => {
-      await bookControls3.start({ opacity: 1, y: 0 });
-      while (true) {
-        await bookControls3.start({
-          x: [0, 30, 0, -30, 0],
-          y: [0, -25, 0, 25, 0],
-          rotate: [0, 10, 0, -10, 0],
-          transition: { duration: 12, repeat: Infinity }
-        });
-      }
-    };
-
-    animateBooks();
-    animateBook2();
-    animateBook3();
-  }, [bookControls, bookControls2, bookControls3]);
-
- 
-
-
-
-
-  
   return (
     <div className="club-container">
-      {/* Floating Books */}
+      {/* Hero Header with Background Image */}
       <motion.div 
-        className="floating-book book-1"
-        initial={{ opacity: 0, y: 50 }}
-        animate={bookControls}
-      >
-        📘
-      </motion.div>
-
-      <motion.div 
-        className="floating-book book-2"
-        initial={{ opacity: 0, y: 50 }}
-        animate={bookControls2}
-      >
-        📕
-      </motion.div>
-
-      <motion.div 
-        className="floating-book book-3"
-        initial={{ opacity: 0, y: 50 }}
-        animate={bookControls3}
-      >
-        📗
-      </motion.div>
-
-      {/* Club Header */}
-      <motion.div 
-        className="club-header"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        className="club-hero"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="club-title">
-          <span className="title-part tech">{club.name1}</span>
-          <span className="title-part innovators">{club.name2}</span>
-          <span className="title-part club">Club</span>
-        </h1>
-        <div className="colorful-underline"></div>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <motion.h1 
+            className="club-title"
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <span className="title-part tech">{club.name1}</span>
+            <span className="title-part innovators">{club.name2}</span>
+            <span className="title-part club">Club</span>
+          </motion.h1>
+          <motion.div 
+            className="colorful-underline"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          />
+        </div>
       </motion.div>
-
-      {/* Full Width Hero Image */}
       <div className="full-width-hero-container">
         <motion.div
           className="full-width-hero"
@@ -124,47 +67,70 @@ const Club: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Full Width About Section */}
-      <div className="full-width-about-container">
-        <motion.section 
-          className="full-width-about"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
+      {/* About Section */}
+      <motion.section 
+        className="about-section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="section-container">
+          <h2>About Our Club</h2>
           <div className="about-content">
-            <h2>About Our Club</h2>
             {club.about.map((para, index) => (
-              <p key={index} className="about-text">{para}</p>
+              <motion.p 
+                key={index} 
+                className="about-text"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                {para}
+              </motion.p>
             ))}
           </div>
-        </motion.section>
-      </div>
+        </div>
+      </motion.section>
 
       {/* Events Section */}
       <motion.section 
         className="events-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2>Upcoming Events</h2>
-        <div className="events-grid">
-          {club.events.map(event => (
-            <motion.div 
-              key={event.id}
-              className="event-card"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <h3>{event.title}</h3>
-              <p className="event-date">{event.date}</p>
-              <p>{event.description}</p>
-              <button className="event-button">Learn More</button>
-            </motion.div>
-          ))}
+        <div className="section-container">
+          <h2>Upcoming Events</h2>
+          <div className="events-grid">
+            {club.events.map(event => (
+              <motion.div 
+                key={event.id}
+                className="event-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                }}
+              >
+                <h3>{event.title}</h3>
+                <p className="event-date">{event.date}</p>
+                <p>{event.description}</p>
+                <motion.button 
+                  className="event-button"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More
+                </motion.button>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
 
@@ -174,36 +140,52 @@ const Club: React.FC = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.8 }}
       >
-        <h2>Our Members</h2>
-        <div className="members-grid">
-          {club.members.map(member => (
-            <motion.div 
-              key={member.id}
-              className="member-card"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: member.id * 0.05 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="member-image-container">
-                <img 
-                  src={`https://randomuser.me/api/portraits/${member.id % 2 === 0 ? 'women' : 'men'}/${member.id}.jpg`} 
-                  alt={member.name}
-                  className="member-image"
-                />
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="linkedin-icon">
-                  <FaLinkedin />
-                </a>
-              </div>
-              <h3>{member.name}</h3>
-              <p className="member-role">{member.role}</p>
-            </motion.div>
-          ))}
+        <div className="section-container">
+          <h2>Our Members</h2>
+          <div className="members-grid">
+            {club.members.map(member => (
+              <motion.div 
+                key={member.id}
+                className="member-card"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: member.id * 0.05 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="member-image-container">
+                  <img 
+                    src={`https://randomuser.me/api/portraits/${member.id % 2 === 0 ? 'women' : 'men'}/${member.id}.jpg`} 
+                    alt={member.name}
+                    className="member-image"
+                  />
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="linkedin-icon">
+                    <FaLinkedin />
+                  </a>
+                </div>
+                <h3>{member.name}</h3>
+                <p className="member-role">{member.role}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.section>
+
+      {/* Floating decorative elements */}
+      <motion.div 
+        className="floating-element element-1"
+        animate={controls}
+      >
+        📘
+      </motion.div>
+      <motion.div 
+        className="floating-element element-2"
+        animate={controls}
+      >
+        📚
+      </motion.div>
     </div>
   );
 };

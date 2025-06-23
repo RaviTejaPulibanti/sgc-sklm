@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-
 import "./ClubHome.css";
 import { clubsData} from "./ClubsData";
 import { Link } from "react-router-dom";

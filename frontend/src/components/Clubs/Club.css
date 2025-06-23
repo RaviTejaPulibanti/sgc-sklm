@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap");
 
 :root {
   --primary: #6c5ce7;
@@ -10,10 +10,11 @@
   --tech-color: #0984e3;
   --innovators-color: #00b894;
   --club-color: #e84393;
-  
-  --font-heading: 'Montserrat', sans-serif;
-  --font-about: 'Playfair Display', serif;
-  --font-body: 'Poppins', sans-serif;
+  --overlay: rgba(0, 0, 0, 0.6);
+
+  --font-heading: "Montserrat", sans-serif;
+  --font-about: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
 }
 
 * {
@@ -24,55 +25,57 @@
 
 body {
   font-family: var(--font-body);
+  color: var(--dark);
+  background-color: var(--light);
   overflow-x: hidden;
 }
 
 .club-container {
   width: 100%;
-  margin: 100px auto 0;
-  padding: 0;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.club-hero {
   position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+    no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Floating Books */
-.floating-book {
+.hero-overlay {
   position: absolute;
-  font-size: 3rem;
-  z-index: -1;
-  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
-  opacity: 0.8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay);
+  z-index: 1;
 }
 
-.book-1 {
-  top: 150px;
-  left: 5%;
-}
-
-.book-2 {
-  top: 60%;
-  right: 8%;
-  font-size: 2.5rem;
-}
-
-.book-3 {
-  top: 80%;
-  left: 10%;
-  font-size: 2.2rem;
-}
-
-/* Club Header */
-.club-header {
+.hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  margin-bottom: 40px;
   padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .club-title {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 900;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   letter-spacing: -1px;
+  line-height: 1.2;
 }
 
 .title-part {
@@ -82,38 +85,57 @@ body {
 
 .tech {
   color: var(--tech-color);
+  text-shadow: 0 2px 10px rgba(9, 132, 227, 0.5);
 }
 
 .innovators {
   color: var(--innovators-color);
+  text-shadow: 0 2px 10px rgba(0, 184, 148, 0.5);
 }
 
 .club {
   color: var(--club-color);
+  text-shadow: 0 2px 10px rgba(232, 67, 147, 0.5);
 }
 
 .colorful-underline {
   height: 5px;
   width: 200px;
   margin: 0 auto;
-  background: linear-gradient(90deg, 
-    var(--tech-color) 0%, 
-    var(--innovators-color) 50%, 
-    var(--club-color) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--tech-color) 0%,
+    var(--innovators-color) 50%,
+    var(--club-color) 100%
+  );
   border-radius: 5px;
+  transform-origin: center;
 }
 
-/* Full Width Hero Image */
-.full-width-hero-container {
-  width: 100vw;
+/* Section Styling */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  overflow: hidden;
 }
 
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
 .full-width-hero {
   width: 100%;
   height: 50vh;
@@ -130,71 +152,48 @@ body {
   object-position: center;
 }
 
-/* Full Width About Section */
-.full-width-about-container {
-  width: 100vw;
+/* About Section */
+.about-section {
+  background-color: white;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #f8f9fa;
-  padding: 60px 0;
-}
-
-.full-width-about {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .about-content {
-  padding: 0 20px;
-  text-align: center;
-}
-
-.about-content h2 {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--dark);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-text {
   font-family: var(--font-about);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: #555;
-  margin-bottom: 1.5rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 20px;
+  color: var(--dark);
 }
 
 /* Events Section */
 .events-section {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  background-color: #f9f9f9;
 }
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin-top: 30px;
 }
 
 .event-card {
   background: white;
   border-radius: 10px;
-  padding: 25px;
+  padding: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .event-card h3 {
   color: var(--primary);
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
 }
 
 .event-date {
@@ -208,12 +207,13 @@ body {
   background: var(--primary);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: 600;
-  transition: background 0.3s;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .event-button:hover {
@@ -221,39 +221,34 @@ body {
 }
 
 /* Members Section */
-.members-section {
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
 .members-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
 }
 
 .member-card {
   text-align: center;
   background: white;
-  padding: 15px;
+  padding: 25px 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .member-image-container {
   position: relative;
-  margin-bottom: 15px;
-  width: 100%;
+  margin: 0 auto 20px;
+  width: 150px;
   height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .member-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
   display: block;
 }
 
@@ -270,68 +265,95 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .linkedin-icon:hover {
   transform: scale(1.2);
+  background: #005582;
 }
 
 .member-role {
   color: var(--secondary);
   font-size: 0.9rem;
   font-weight: 600;
+  margin-top: 5px;
+}
+
+/* Floating Elements */
+.floating-element {
+  position: fixed;
+  font-size: 3rem;
+  z-index: -1;
+  opacity: 0.1;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+}
+
+.element-1 {
+  top: 20%;
+  left: 5%;
+}
+
+.element-2 {
+  top: 60%;
+  right: 5%;
+  font-size: 2.5rem;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .events-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .section-container {
+    padding: 60px 20px;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .club-container {
-    margin-top: 90px;
+  .club-hero {
+    min-height: 500px;
   }
 
-  .full-width-hero {
-    height: 40vh;
-  }
-
-  .about-content h2 {
-    font-size: 2rem;
+  .club-title {
+    font-size: 2.8rem;
   }
 
   .about-text {
     font-size: 1rem;
   }
 
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
   .member-image-container {
+    width: 120px;
     height: 120px;
   }
 }
 
 @media (max-width: 480px) {
+  .club-hero {
+    min-height: 400px;
+  }
+
   .club-title {
     font-size: 2.2rem;
   }
 
-  .events-grid {
-    grid-template-columns: 1fr;
+  h2 {
+    font-size: 1.8rem;
   }
 
-  .members-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  .section-container {
+    padding: 50px 15px;
+  }
+
+  .event-card,
+  .member-card {
+    padding: 20px 15px;
   }
 }

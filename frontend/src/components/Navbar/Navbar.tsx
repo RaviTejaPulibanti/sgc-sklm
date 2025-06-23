@@ -223,7 +223,11 @@ const Navbar = () => {
               alt="College Logo" 
               className="college-logo" 
             />
-            <span className="college-name">SGC</span>
+           <img 
+               src="https://sgcrguktsklm.org.in/assets/img/logo/logo1.png" 
+                alt="Organization Logo"
+                className="h-7 w-auto" 
+            />
           </div>
 
           {/* Desktop Navigation */}
