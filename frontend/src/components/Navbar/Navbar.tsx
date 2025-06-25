@@ -161,6 +161,7 @@ import {
   FaChalkboardTeacher, 
   
 } from 'react-icons/fa';
+import { MdGroups2 } from "react-icons/md";
 import './Navbar.css';
 import Headline from '../../pages/home/Headline';
 
@@ -199,6 +200,7 @@ const Navbar = () => {
         ]
 
     },
+    { name: 'Members', icon: <MdGroups2 />, path: '/members', dropdown: null },
     { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
     { name: 'News & Events', icon: <FaNewspaper />, path: '/events', dropdown: null },
       { name: 'Clubs', icon: <FaEnvelope />, path: '/clubs', dropdown: null },

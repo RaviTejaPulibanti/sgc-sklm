@@ -12,6 +12,7 @@ import MobileNavbar from "./components/Navbar/MobileNavbar";
 import Contact from "./components/Contact/Contact";
 import Club from "./components/Clubs/Club";
 import Navbar from "./components/Navbar/Navbar";
+import Members from "./components/Members/Members"
 // import Headline from "./pages/home/Headline";
 
 function AppRoutes() {
@@ -44,7 +45,7 @@ function AppRoutes() {
         <Route path="/executive-board" element={<ExecutiveBoard />} />
         <Route path="/clubs" element={<ClubHome />} />
         <Route path="/contact-us" element={<Contact />} />
-
+        <Route path="/members" element={<Members />} />
         <Route path='/clubs/:id' element={<Club />} />
       </Routes>
 

@@ -52,11 +52,9 @@ const Club: React.FC = () => {
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           />
-        </div>
-      </motion.div>
-
-      {/* About Section */}
-      <motion.section 
+           
+           
+        </div><motion.section 
         className="about-section"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -65,6 +63,18 @@ const Club: React.FC = () => {
       >
         <div className="section-container">
           <h2>About Our Club</h2>
+          <motion.div 
+        className="floating-element element-1"
+        animate={controls}
+      >
+        📘
+      </motion.div>
+      <motion.div 
+        className="floating-element element-2"
+        animate={controls}
+      >
+        📚
+      </motion.div>
           <div className="about-content">
             {club.about.map((para, index) => (
               <motion.p 
@@ -78,9 +88,14 @@ const Club: React.FC = () => {
                 {para}
               </motion.p>
             ))}
+            
           </div>
         </div>
       </motion.section>
+      </motion.div>
+
+      {/* About Section */}
+     
 
       {/* Events Section */}
       <motion.section 
@@ -162,18 +177,7 @@ const Club: React.FC = () => {
       </motion.section>
 
       {/* Floating decorative elements */}
-      <motion.div 
-        className="floating-element element-1"
-        animate={controls}
-      >
-        📘
-      </motion.div>
-      <motion.div 
-        className="floating-element element-2"
-        animate={controls}
-      >
-        📚
-      </motion.div>
+      
     </div>
   );
 };
