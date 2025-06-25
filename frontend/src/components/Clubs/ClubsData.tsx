@@ -1,3 +1,37 @@
+import competative from "../../../public/clubimgs/competative.webp"
+import coding from "../../../public/clubimgs/coding.webp"
+import dp from "../../../public/clubimgs//photography.webp"
+import startup from "../../../public/clubimgs/startup.webp"
+import robotics from "../../../public/clubimgs/robotics.webp"
+import ls from "../../../public/clubimgs/ls.webp"
+import internship from "../../../public/clubimgs/internship.webp"
+import linquistic from "../../../public/clubimgs/linguistic.webp"
+import Finance from "../../../public/clubimgs/finance.webp"
+import sports from "../../../public/clubimgs/sports.webp"
+import cc from "../../../public/clubimgs/cc.webp"
+import arts from "../../../public/clubimgs/cc.webp"
+import electronics from "../../../public/clubimgs/electronics.webp"
+import eco from "../../../public/clubimgs/competative.webp"
+import yoga from "../../../public/clubimgs/competative.webp"
+import he from "../../../public/clubimgs/competative.webp"
+
+import competativeBg from "../../../public/clubBgimgs/competativeBg.webp"
+import codingBg from "../../../public/clubBgimgs/codingBg.webp"
+import dpBg from "../../../public/clubBgimgs//photographyBg.webp"
+import startupBg from "../../../public/clubBgimgs/startupBg.webp"
+import roboticsBg from "../../../public/clubBgimgs/roboticsBg.webp"
+import lsBg from "../../../public/clubBgimgs/lsBg.webp"
+import internshipBg from "../../../public/clubBgimgs/internshipBg.webp"
+import linquisticBg from "../../../public/clubBgimgs/linguisticBg.webp"
+import FinanceBg from "../../../public/clubBgimgs/finance.webp"
+import sportsBg from "../../../public/clubBgimgs/sportsBg.webp"
+import ccBg from "../../../public/clubBgimgs/ccBg.webp"
+import artsBg from "../../../public/clubBgimgs/ecoBg.webp"
+import electronicsBg from "../../../public/clubBgimgs/electronics.webp"
+import ecoBg from "../../../public/clubBgimgs/ecoBg.webp"
+import yogaBg from "../../../public/clubBgimgs/yogaBg.webp"
+import heBg from "../../../public/clubBgimgs/competativeBg.webp"
+
 export interface ClubType {
     id: string;
     name1: string;
@@ -7,6 +41,7 @@ export interface ClubType {
   description: string;
   image?: string;
     heroImage: string;
+    backgroundImage : String;
     events: {
       id: number;
       title: string;
@@ -23,9 +58,9 @@ export interface ClubType {
   
   export const clubsData: ClubType[] = [
     {
-      id: 'tech-innovators',
-      name1: 'Tech',
-      name2 : 'Innovators',
+      id: 'competative',
+      name1: 'Competative',
+      name2 : '',
       founded: 2015,
       description:
           "Annual technology conference featuring industry leaders",
@@ -34,8 +69,8 @@ export interface ClubType {
         "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
       ],
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      heroImage:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      heroImage: competative,
+      backgroundImage: competativeBg,
       events: [
         {
           id: 1,
@@ -97,8 +132,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         image:'./clubimgs/coding.webp' ,
-        heroImage:
-              "./clubBgimgs/codingBg.webp",
+        heroImage:coding,
+        backgroundImage: codingBg,
         description:
               "Annual technology conference featuring industry leaders",
         events: [
@@ -153,9 +188,9 @@ export interface ClubType {
         })),
       },
       {
-        id: 'Digital-Literacy-club',
-          name1: 'Digital',
-         name2 : 'Literacy',
+        id: 'd-p',
+          name1: 'Designing and',
+         name2 : 'Photography',
         founded: 2015,
         description:
             "Annual technology conference featuring industry leaders",
@@ -164,7 +199,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          dp,
+          backgroundImage: dpBg,
         events: [
           {
             id: 1,
@@ -226,7 +262,8 @@ export interface ClubType {
             "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
           ],
           heroImage:
-                "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                startup,
+          backgroundImage: startupBg,
           description:
                 "Annual technology conference featuring industry leaders",
           events: [
@@ -290,7 +327,9 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-              "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+              robotics,
+
+        backgroundImage: roboticsBg,
         description:
               "Annual technology conference featuring industry leaders",
         events: [
@@ -356,7 +395,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+         ls,
+        backgroundImage: lsBg,
         events: [
           {
             id: 1,
@@ -419,7 +459,8 @@ export interface ClubType {
             "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
           ],
           heroImage:
-                "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                internship,
+          backgroundImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
           description:
                 "Annual technology conference featuring industry leaders",
           events: [
@@ -475,7 +516,7 @@ export interface ClubType {
       },
       {
         id: 'Linguistic-club',
-        name1: 'Linguistic',
+        name1: 'Linguistic & Personality Development',
         founded: 2015,
         description:
             "Annual technology conference featuring industry leaders",
@@ -484,7 +525,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          linquistic,
+        backgroundImage: linquisticBg,
         events: [
           {
             id: 1,
@@ -547,7 +589,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          Finance,
+        backgroundImage: FinanceBg,
         events: [
           {
             id: 1,
@@ -601,8 +644,8 @@ export interface ClubType {
       },
       {
         id: 'Games-sports-club',
-        name1: 'Games &',
-        name2:'Sports',
+        name1: 'Sports &',
+        name2:'Games',
         founded: 2015,
         description:
             "Annual technology conference featuring industry leaders",
@@ -611,7 +654,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          sports,
+        backgroundImage: sportsBg,
         events: [
           {
             id: 1,
@@ -675,7 +719,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          cc,
+        backgroundImage: ccBg,
         events: [
           {
             id: 1,
@@ -728,8 +773,8 @@ export interface ClubType {
         })),
       },
       {
-        id: 'Competitive-club',
-        name1: 'Competitive',
+        id: 'Arts-Craftd',
+        name1: 'Arts & Crafts',
         founded: 2015,
         description:
             "Annual technology conference featuring industry leaders",
@@ -737,8 +782,9 @@ export interface ClubType {
           "The Tech Innovators Club is a vibrant community of technology enthusiasts dedicated to exploring cutting-edge innovations, sharing knowledge, and building meaningful connections.",
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
+        backgroundImage: arts,
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          artsBg,
         events: [
           {
             id: 1,
@@ -791,9 +837,8 @@ export interface ClubType {
         })),
       },
       {
-        id: 'Photography-Designing-club',
-        name1: 'Photography &',
-        name2:'Designing',
+        id: 'electronics-club',
+        name1: 'Elctronics',
         founded: 2015,
         description:
             "Annual technology conference featuring industry leaders",
@@ -802,7 +847,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          electronics,
+        backgroundImage: electronicsBg,
         events: [
           {
             id: 1,
@@ -865,7 +911,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          eco,
+        backgroundImage: ecoBg,
         events: [
           {
             id: 1,
@@ -928,7 +975,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          yogaBg,
+        backgroundImage: yogaBg,
         events: [
           {
             id: 1,
@@ -981,8 +1029,8 @@ export interface ClubType {
         })),
       },
       {
-        id: 'Research-club',
-        name1: 'Researchs',
+        id: 'higher-club',
+        name1: 'Higher Education',
         founded: 2015,
         description:
             "Annual technology conference featuring industry leaders",
@@ -991,7 +1039,8 @@ export interface ClubType {
           "Our mission is to create a platform where students can develop technical skills, work on real-world projects, and connect with industry professionals.",
         ],
         heroImage:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+          he,
+        backgroundImage: heBg,
         events: [
           {
             id: 1,

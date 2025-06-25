@@ -26,9 +26,10 @@ const Club: React.FC = () => {
 
   return (
     <div className="club-container">
-      {/* Hero Header with Background Image */}
+      {/* Hero Section with Club-specific Background */}
       <motion.div 
         className="club-hero"
+        style={{ backgroundImage: `url(${club.backgroundImage})` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -42,7 +43,7 @@ const Club: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="title-part tech">{club.name1}</span>
-            <span className="title-part innovators">{club.name2}</span>
+            {club.name2 && <span className="title-part innovators">{club.name2}</span>}
             <span className="title-part club">Club</span>
           </motion.h1>
           <motion.div 
@@ -53,19 +54,6 @@ const Club: React.FC = () => {
           />
         </div>
       </motion.div>
-      <div className="full-width-hero-container">
-        <motion.div
-          className="full-width-hero"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-        >
-          <img src={club.heroImage}
-            alt={club.name1}
-            className="hero-image"
-          />
-        </motion.div>
-      </div>
 
       {/* About Section */}
       <motion.section 
