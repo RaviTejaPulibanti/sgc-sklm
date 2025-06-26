@@ -30,13 +30,13 @@ body {
   overflow-x: hidden;
 }
 
-.club-container {
+.club-main-container {
   width: 100%;
   margin: 0 auto;
 }
 
 /* Hero Section */
-.club-hero {
+.club-main-hero {
   position: relative;
   width: 100vw;
   height: 150vh;
@@ -51,7 +51,7 @@ body {
   left:0;
 }
 
-.hero-overlay {
+.club-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -61,7 +61,7 @@ body {
   z-index: 1;
 }
 
-.hero-content {
+.club-hero-content {
   position:relative;
   z-index: 2;
   top:-20%;
@@ -71,7 +71,7 @@ body {
   margin: 0 ;
 }
 
-.club-title {
+.club-main-title {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 500;
@@ -80,27 +80,27 @@ body {
   line-height: 1;
 }
 
-.title-part {
+.club-title-part {
   display: inline-block;
   margin: 0 5px;
 }
 
-.tech {
+.club-tech-text {
   color: var(--tech-color);
   text-shadow: 0 2px 10px rgba(9, 132, 227, 0.5);
 }
 
-.innovators {
+.club-innovators-text {
   color: var(--innovators-color);
   text-shadow: 0 2px 10px rgba(0, 184, 148, 0.5);
 }
 
-.club {
+.club-name-text {
   color: var(--club-color);
   text-shadow: 0 2px 10px rgba(232, 67, 147, 0.5);
 }
 
-.colorful-underline {
+.club-colorful-underline {
   height: 5px;
   width: 200px;
   margin: 0 auto;
@@ -115,14 +115,13 @@ body {
 }
 
 /* Section Styling */
-.section-container {
+.club-section-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0px 0px;
-
 }
 
-h2 {
+.club-section-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
   margin-bottom: 40px;
@@ -130,7 +129,7 @@ h2 {
   position: relative;
 }
 
-h2::after {
+.club-section-title::after {
   content: "";
   display: block;
   width: 80px;
@@ -139,7 +138,8 @@ h2::after {
   margin: 15px auto 0;
   border-radius: 2px;
 }
-.full-width-hero {
+
+.club-full-width-hero {
   width: 100%;
   height: 50vh;
   max-height: 500px;
@@ -148,7 +148,7 @@ h2::after {
   align-items: center;
 }
 
-.hero-image {
+.club-hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -156,7 +156,7 @@ h2::after {
 }
 
 /* About Section */
-.about-section {
+.club-about-section {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -167,13 +167,13 @@ h2::after {
   margin-bottom: 0px;
 }
 
-.about-content {
+.club-about-content {
   max-width: 800px;
   margin: 0 auto;
    padding-bottom: 0px;
 }
 
-.about-text {
+.club-about-text {
   font-family: var(--font-about);
   font-size: 1.1rem;
   line-height: 1.8;
@@ -182,17 +182,17 @@ h2::after {
 }
 
 /* Events Section */
-.events-section {
+.club-events-section {
   background-color: #f9f9f9;
 }
 
-.events-grid {
+.club-events-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-.event-card {
+.club-event-card {
   background: white;
   border-radius: 10px;
   padding: 30px;
@@ -200,20 +200,20 @@ h2::after {
   transition: all 0.3s ease;
 }
 
-.event-card h3 {
+.club-event-card h3 {
   color: var(--primary);
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
-.event-date {
+.club-event-date {
   color: var(--accent);
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 0.9rem;
 }
 
-.event-button {
+.club-event-button {
   background: var(--primary);
   color: white;
   border: none;
@@ -226,18 +226,18 @@ h2::after {
   transition: all 0.3s ease;
 }
 
-.event-button:hover {
+.club-event-button:hover {
   background: var(--secondary);
 }
 
 /* Members Section */
-.members-grid {
+.club-members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
 }
 
-.member-card {
+.club-member-card {
   text-align: center;
   background: white;
   padding: 25px 20px;
@@ -246,7 +246,7 @@ h2::after {
   transition: all 0.3s ease;
 }
 
-.member-image-container {
+.club-member-image-container {
   position: relative;
   margin: 0 auto 20px;
   width: 150px;
@@ -255,14 +255,14 @@ h2::after {
   overflow: hidden;
 }
 
-.member-image {
+.club-member-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.linkedin-icon {
+.club-linkedin-icon {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -279,12 +279,12 @@ h2::after {
   text-decoration: none;
 }
 
-.linkedin-icon:hover {
+.club-linkedin-icon:hover {
   transform: scale(1.2);
   background: #005582;
 }
 
-.member-role {
+.club-member-role {
   color: var(--secondary);
   font-size: 0.9rem;
   font-weight: 600;
@@ -292,7 +292,7 @@ h2::after {
 }
 
 /* Floating Elements */
-.floating-element {
+.club-floating-element {
   position: fixed;
   font-size: 3rem;
   z-index: -1;
@@ -300,12 +300,12 @@ h2::after {
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
 
-.element-1 {
+.club-element-1 {
   top: 20%;
   left: 5%;
 }
 
-.element-2 {
+.club-element-2 {
   top: 60%;
   right: 5%;
   font-size: 2.5rem;
@@ -313,60 +313,60 @@ h2::after {
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .section-container {
+  .club-section-container {
     padding: 60px 20px;
   }
 
-  h2 {
+  .club-section-title {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .club-hero {
+  .club-main-hero {
     min-height: 500px;
   }
 
-  .club-title {
+  .club-main-title {
     font-size: 2.8rem;
   }
 
-  .about-text {
+  .club-about-text {
     font-size: 1rem;
   }
 
-  .members-grid {
+  .club-members-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
-  .member-image-container {
+  .club-member-image-container {
     width: 120px;
     height: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .club-hero {
+  .club-main-hero {
     min-height: 400px;
   }
 
-  .club-title {
+  .club-main-title {
     font-size: 2.2rem;
   }
 
-  h2 {
+  .club-section-title {
     font-size: 1.8rem;
   }
-  .hero-content{
+  .club-hero-content{
     top:-180px;
   }
 
-  .section-container {
+  .club-section-container {
     padding: 50px 15px;
   }
 
-  .event-card,
-  .member-card {
+  .club-event-card,
+  .club-member-card {
     padding: 20px 15px;
   }
 }
