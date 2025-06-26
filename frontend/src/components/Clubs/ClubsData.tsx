@@ -55,6 +55,7 @@ export interface ClubType {
       name: string;
       role: string;
       linkedin: string;
+      image: string;
     }[];
   }
   
@@ -122,6 +123,7 @@ export interface ClubType {
         name: `Member ${i + 1}`,
         role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
         linkedin: `https://linkedin.com/in/member${i + 1}`,
+        image: `https://i.pravatar.cc/150?img=${i + 120}`
       })),
       },
       {
@@ -187,6 +189,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -252,6 +255,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
         },
         {
@@ -317,12 +321,13 @@ export interface ClubType {
             name: `Member ${i + 1}`,
             role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
             linkedin: `https://linkedin.com/in/member${i + 1}`,
+            image: `https://i.pravatar.cc/150?img=${i + 120}`
           })),
       },
       {
-        id: 'Robotics-club ',
-          name1: 'Robotics',
-          founded: 2015,
+        id: 'robotics-club',
+        name1: 'Robotics',
+        founded: 2015,
         
         about: [
           "The Tech Innovators Club is a vibrant community of technology enthusiasts dedicated to exploring cutting-edge innovations, sharing knowledge, and building meaningful connections.",
@@ -383,6 +388,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -448,6 +454,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
         },
         {
@@ -514,6 +521,7 @@ export interface ClubType {
             name: `Member ${i + 1}`,
             role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
             linkedin: `https://linkedin.com/in/member${i + 1}`,
+            image: `https://i.pravatar.cc/150?img=${i + 120}`
           })),
       },
       {
@@ -578,6 +586,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -642,6 +651,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -707,6 +717,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -772,6 +783,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -836,6 +848,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -900,6 +913,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -964,6 +978,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -1028,6 +1043,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },
       {
@@ -1092,6 +1108,7 @@ export interface ClubType {
           name: `Member ${i + 1}`,
           role: i % 3 === 0 ? "President" : i % 2 === 0 ? "Coordinator" : "Member",
           linkedin: `https://linkedin.com/in/member${i + 1}`,
+          image: `https://i.pravatar.cc/150?img=${i + 120}`
         })),
       },       
     

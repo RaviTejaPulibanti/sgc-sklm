@@ -160,7 +160,7 @@ const Club: React.FC = () => {
               >
                 <div className="member-image-container">
                   <img 
-                    src={`https://randomuser.me/api/portraits/${member.id % 2 === 0 ? 'women' : 'men'}/${member.id}.jpg`} 
+                    src={member.image} 
                     alt={member.name}
                     className="member-image"
                   />
