@@ -13,6 +13,7 @@ import Contact from "./components/Contact/Contact";
 import Club from "./components/Clubs/Club";
 import Navbar from "./components/Navbar/Navbar";
 import EventsNews from "./components/Events/Events";
+import Members from "./components/Members/Members"
 // import Headline from "./pages/home/Headline";
 
 function AppRoutes() {
@@ -47,6 +48,7 @@ function AppRoutes() {
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/events" element={<EventsNews />} />
 
+        <Route path="/members" element={<Members />} />
         <Route path='/clubs/:id' element={<Club />} />
       </Routes>
 

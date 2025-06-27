@@ -4,13 +4,19 @@ import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 import './ExecutiveBoard.css';
 
 //members images
-import pr from "../../executiveimgs/pr.webp"
-import apr1 from "../../executiveimgs/apr1.webp"
-import apr2 from "../../executiveimgs/apr2.webp"
-import pucVp1 from "../../executiveimgs/pucVp1.webp"
-import pucvp2 from "../../executiveimgs/pucvp2.webp"
-import civilvp from "../../executiveimgs/civilvp.webp"
-import sm from "../../executiveimgs/sm.webp"
+import president from "../../assets/executiveimgs/president.webp"
+import cseVp from  "../../assets/executiveimgs/cseVp.webp"
+import pucVp1 from "../../assets/executiveimgs/pucVp1.webp"
+import pucvp2 from "../../assets/executiveimgs/pucvp2.webp"
+import civilvp from "../../assets/executiveimgs/civilvp.webp"
+// import eceVp from "../../assets/executiveimgs/eceVp.webp"
+import eeeVp from "../../assets/executiveimgs/eeeVp.webp"
+import pr from "../../assets/executiveimgs/pr.webp"
+import apr1 from "../../assets/executiveimgs/apr1.webp"
+import apr2 from "../../assets/executiveimgs/apr2.webp"
+import sm from "../../assets/executiveimgs/sm.webp"
+import asm1 from "../../assets/executiveimgs/asm1.webp"
+
 
 
 interface BoardMember {
@@ -72,7 +78,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 5,
       name: 'K. Guna Sri',
       position: 'President',
-      image: 'https://randomuser.me/api/portraits/men/3.jpg',
+      image: president,
       department:'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/kimidi-gunasri-38151931a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
@@ -82,7 +88,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 6,
       name: 'K. Jai Sheel',
       position: 'Vice President (CSE)',
-      image: 'https://randomuser.me/api/portraits/women/3.jpg',
+      image: cseVp,
       department:'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/jaisheel-karlapudi-b5a558325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
@@ -122,7 +128,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 10,
       name: 'G. Nishanth Reddy',
       position: 'Vice President (EEE)',
-      image: 'https://randomuser.me/api/portraits/women/5.jpg',
+      image: eeeVp,
       department:'EEE',
       social: {
         linkedin: 'https://www.linkedin.com/in/nishanth-reddy-1174a735b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
@@ -202,7 +208,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 18,
       name: 'Ch. Jeevan Sai',
       position: 'Associate Social Media Manager',
-      image: 'https://randomuser.me/api/portraits/women/9.jpg',
+      image: asm1,
       department:'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/chukka-jeevan-sai-530400335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
