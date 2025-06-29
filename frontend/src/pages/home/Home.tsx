@@ -43,10 +43,10 @@ const Home: React.FC = () => {
         </div>
       </div>
       
+      <AboutSGC />  
       {/* Counter section */}
       <div className="w-full bg-white pt-10 pb-20">
-        <Counter />  
-        <AboutSGC />     
+        <Counter />     
       </div>
 
       
