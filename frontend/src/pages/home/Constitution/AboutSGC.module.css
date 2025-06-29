@@ -1,0 +1,255 @@
+/* Base Styles */
+.aboutSection {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.gradientBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(100, 115, 255, 0.1) 0%, 
+    rgba(214, 51, 132, 0.1) 50%, 
+    rgba(255, 171, 0, 0.1) 100%);
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title Styles */
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #2b2d42;
+  margin-bottom: 3rem;
+  text-align: center;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #6473ff, #d63384, #ffab00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, #6473ff, #d63384);
+  opacity: 0.5;
+  z-index: -1;
+  border-radius: 4px;
+  transform: scaleX(0.9);
+  transform-origin: left;
+}
+
+/* Quote Card */
+.quoteCard {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 3rem 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.quoteDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #6473ff, #d63384, #ffab00);
+  border-radius: 20px 0 0 20px;
+}
+
+.quote {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.8;
+  color: #4a5568;
+  font-style: italic;
+  position: relative;
+  margin: 0;
+}
+
+/* Objectives Section */
+.objectivesContainer {
+  margin: 4rem 0;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #2b2d42;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.objectiveCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.objectiveCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 2;
+}
+
+.card1::before { background: linear-gradient(90deg, #6473ff, #7988ff); }
+.card2::before { background: linear-gradient(90deg, #d63384, #e54794); }
+.card3::before { background: linear-gradient(90deg, #ffab00, #ffbe33); }
+.card4::before { background: linear-gradient(90deg, #00b4d8, #48cae4); }
+
+.objectiveCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.objectiveTitle {
+  font-weight: 700;
+  color: #2b2d42;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.objectiveIcon {
+  font-size: 2.5rem;
+  text-align: right;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  z-index: 0;
+  transition: all 0.3s ease;
+}
+
+.objectiveCard:hover .objectiveIcon {
+  opacity: 0.4;
+  transform: scale(1.2);
+}
+
+/* Button Styles */
+.constitutionButton {
+  display: inline-flex;
+  align-items: center;
+  margin: 2rem auto 0;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(90deg, #6473ff, #d63384);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(100, 115, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.constitutionButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #d63384, #6473ff);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.constitutionButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(100, 115, 255, 0.4);
+}
+
+.constitutionButton:hover::before {
+  opacity: 1;
+}
+
+.buttonArrow {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.constitutionButton:hover .buttonArrow {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 3rem 0;
+  }
+  
+  .quoteCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .objectivesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .objectiveCard {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .constitutionButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
