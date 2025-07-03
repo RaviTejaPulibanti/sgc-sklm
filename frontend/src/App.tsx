@@ -19,7 +19,7 @@ import Members from "./components/Members/Members"
 function AppRoutes() {
   const location = useLocation();
 
-  // Hide Navbar on admin login route
+  
   const hideNavbar = location.pathname.startsWith("/admin");
 
 
@@ -27,8 +27,7 @@ function AppRoutes() {
     <>
       {!hideNavbar &&
         <div>
-          <Navbar />
-          
+          <Navbar />      
           <MobileNavbar />
         </div>
         
@@ -37,9 +36,11 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+
         <Route element={<PrivateAdminRoute />}>
-          <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
         </Route>
+        
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
         <Route path="/about" element={<About />} />
         <Route path="/advisory-board" element={<AdvisoryBoard />} />
@@ -47,7 +48,6 @@ function AppRoutes() {
         <Route path="/clubs" element={<ClubHome />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/events" element={<EventsNews />} />
-
         <Route path="/members" element={<Members />} />
         <Route path='/clubs/:id' element={<Club />} />
       </Routes>
