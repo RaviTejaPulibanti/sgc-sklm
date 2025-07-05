@@ -13,7 +13,9 @@ import Contact from "./components/Contact/Contact";
 import Club from "./components/Clubs/Club";
 import Navbar from "./components/Navbar/Navbar";
 import EventsNews from "./components/Events/Events";
-import Members from "./components/Members/Members"
+import EventDetail from "./components/Events/EventDetail";
+import Members from "./components/Members/Members";
+import AdminEventForm from "./Admin/Events/AdminEventForm";
 // import Headline from "./pages/home/Headline";
 
 function AppRoutes() {
@@ -38,7 +40,8 @@ function AppRoutes() {
         <Route path="/admin/login" element={<AdminLogin />} />
 
         <Route element={<PrivateAdminRoute />}>
-        <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/post-event" element={<AdminEventForm />} />
         </Route>
         
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />
@@ -48,6 +51,8 @@ function AppRoutes() {
         <Route path="/clubs" element={<ClubHome />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/events" element={<EventsNews />} />
+        <Route path="/events/:id" element={<EventDetail />} />
+
         <Route path="/members" element={<Members />} />
         <Route path='/clubs/:id' element={<Club />} />
       </Routes>

@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from './Carousel';
 import CollegeInfoCards from "./CollegeInfoCards";
 import Counter from "./Numbers/Counter";
+import AboutSGC from './Constitution/AboutSGC';
 
 const Home: React.FC = () => {
   const slides = [
@@ -42,10 +43,13 @@ const Home: React.FC = () => {
         </div>
       </div>
       
+      <AboutSGC />  
       {/* Counter section */}
       <div className="w-full bg-white pt-10 pb-20">
-        <Counter />       
+        <Counter />     
       </div>
+
+      
 
     </div>
   );

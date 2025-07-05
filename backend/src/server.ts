@@ -1,22 +1,27 @@
 import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
 import cors from 'cors';
 import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import { authMiddleware } from './middleware/authMiddleware';
+import eventRoutes from "./routes/eventRoutes";
 
-dotenv.config();
+
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 connectDB();
 
 app.use('/api/v1', authRoutes);
 
-app.get('/api/admin/dashboard', authMiddleware as any , (req, res) => {
+app.use('/api/events', eventRoutes);
+
+app.get('/api/admin/dashboard', authMiddleware as any, (req, res) => {
     res.json({ message: 'Welcome Admin!' });
 });
 
