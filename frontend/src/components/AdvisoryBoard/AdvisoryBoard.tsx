@@ -4,6 +4,12 @@ import { FaLinkedin, FaTwitter, FaEnvelope, FaGithub, FaInstagram, FaFacebook, F
 import { IoMdClose } from 'react-icons/io';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// borad-member images
+import director from "../../assets/advisoryBoardimgs/director.webp" 
+import ao from "../../assets/advisoryBoardimgs/ao.webp"
+import chairman from "../../assets/advisoryBoardimgs/chairman.webp"
+
+
 interface BoardMember {
   id: number;
   name: string;
@@ -39,7 +45,7 @@ const AdvisoryBoard: React.FC = () => {
       name: "Prof. K. V. G. D. Balaji",
       position: "Director",
       department: "University Leadership",
-      image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDsx5yLHbg7quYPl9zu_OHZPIZG2fHS4k9wWsiDp1BsroJDKA3WH2UJr7R4g7M2YAC9eN78PNwn28bE8Eh_Xb3CSdBUmrT5ADa5pTWT_VzhtZ2Y36ER0hM8JN7IRRAKdYh9GrxP1hL8MVs_In3iP8-VyMUzfUngmK2EDiFyZKdWIsb_rwfO_i8DNIuszf3/s320/director.jpg",
+      image: director,
       bio: "Distinguished professor with 25 years of academic leadership experience. Spearheading our strategic initiatives and global partnerships. Authored several influential papers on educational reform.",
       linkedin: "#",
       twitter: "#",
@@ -51,7 +57,7 @@ const AdvisoryBoard: React.FC = () => {
       name: "Dr. Ravi Gedela",
       position: "Dean of Student Welfare",
       department: "Computer Science",
-      image: "https://aikyam.rguktsklm.ac.in/faculty/images/(Mr.%20Ravi%20Gedela)1702278586.jpeg",
+      image: chairman,
       bio: "PhD in Computer Engineering with 15 years of industry experience. Specializes in AI research and has led multiple successful tech startups. Currently heading the AI ethics committee.",
       linkedin: "#",
       email: "#",
@@ -62,7 +68,7 @@ const AdvisoryBoard: React.FC = () => {
       name: "Mr. Rama Krishna Muni",
       position: "Administrative Officer",
       department: "Business Administration",
-      image: "https://sgcrguktsklm.org.in/advisory-and-executive-board/images/aos.jpg",
+      image: ao,
       bio: "Former CEO of TechCorp with expertise in business strategy and innovation management. Advisor to Fortune 500 companies and government think tanks on digital transformation.",
       linkedin: "#",
       twitter: "#",
