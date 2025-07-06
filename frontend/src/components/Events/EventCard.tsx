@@ -41,6 +41,7 @@ const clubIcons: Record<string, string> = {
   'Higher Education Club': he,
 };
 
+
 const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const navigate = useNavigate();
 
