@@ -19,6 +19,8 @@ import apr1 from "../../assets/executiveimgs/apr1.webp";
 import apr2 from "../../assets/executiveimgs/apr2.webp";
 import sm from "../../assets/executiveimgs/sm.webp";
 import asm1 from "../../assets/executiveimgs/asm1.webp";
+import wom from "../../assets/webteam/m2.webp";
+import awom from "../../assets/webteam/m3.webp";
 
 interface BoardMember {
   id: number;
@@ -219,7 +221,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 19,
       name: 'Harish',
       position: 'Associate Web Operations Manager',
-      image: 'https://randomuser.me/api/portraits/men/10.jpg',
+      image: awom,
       department: 'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/harish-123456789/'
@@ -229,7 +231,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 20,
       name: 'Raviteja',
       position: 'Web operations Manager',
-      image: '',
+      image: wom,
       department: 'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/raviteja-123456789/'
