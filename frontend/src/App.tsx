@@ -16,6 +16,7 @@ import EventsNews from "./components/Events/Events";
 import EventDetail from "./components/Events/EventDetail";
 import Members from "./components/Members/Members";
 import AdminEventForm from "./Admin/Events/AdminEventForm";
+import WebTeam from "./components/webTeam/WebTeam";
 // import Headline from "./pages/home/Headline";
 
 function AppRoutes() {
@@ -55,6 +56,8 @@ function AppRoutes() {
 
         <Route path="/members" element={<Members />} />
         <Route path='/clubs/:id' element={<Club />} />
+
+         <Route path="/web-team" element={<WebTeam />} />
       </Routes>
 
       <Footer />

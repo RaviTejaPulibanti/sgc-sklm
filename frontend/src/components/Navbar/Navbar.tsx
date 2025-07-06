@@ -196,12 +196,14 @@ const Navbar = () => {
           { name: 'Advisory Board', icon: <FaGraduationCap />, path: '/advisory-board' },
           { name: 'Executive Board', icon: <FaGraduationCap />, path: '/executive-board' },
           { name: 'Members', icon: <FaGraduationCap />, path: '/members' },
+          { name: 'Web Team', icon: <FaGraduationCap />, path: '/web-team' },
         ]
 
     },
     { name: 'About', icon: <FaInfoCircle />, path: '/about', dropdown: null },
     { name: 'News & Events', icon: <FaNewspaper />, path: '/events', dropdown: null },
       { name: 'Clubs', icon: <FaEnvelope />, path: '/clubs', dropdown: null },
+      
       {
         name: 'Reports', icon : <FaNewspaper /> , path: '#', dropdown: [
               { name: 'AY 2022-23', icon: null, path: '#' },

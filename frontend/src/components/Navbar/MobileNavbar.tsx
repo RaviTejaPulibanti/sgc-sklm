@@ -144,6 +144,13 @@ const MobileNavbar: React.FC = () => {
               </span>
               </Link>
             </li>
+            <li>
+              <Link to="/web-team" onClick={toggleNav}>
+              <span className='flex gap-2'>
+                <FaUsers className="nav-icon" /> Web Team
+              </span>
+              </Link>
+            </li>
             <li onClick={() => toggleReport('reports')}>
               <span className='flex gap-2'>
                 <FaFileAlt className="nav-icon" /> REPORTS {expandedReport === 'reports' ? '−' : '+'}
