@@ -1,14 +1,14 @@
+// AdvisoryBoard.tsx
 import React, { useState, useEffect } from 'react';
 import './AdvisoryBoard.css';
-import { FaLinkedin, FaTwitter, FaEnvelope, FaGithub, FaInstagram, FaFacebook, FaGlobe } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaGlobe } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// borad-member images
-import director from "../../assets/advisoryBoardimgs/director.webp" 
-import ao from "../../assets/advisoryBoardimgs/ao.webp"
-import chairman from "../../assets/advisoryBoardimgs/chairman.webp"
-
+// board-member images
+import director from "../../assets/advisoryBoardimgs/director.webp";
+import ao from "../../assets/advisoryBoardimgs/ao.webp";
+import chairman from "../../assets/advisoryBoardimgs/chairman.webp";
 
 interface BoardMember {
   id: number;
@@ -18,11 +18,7 @@ interface BoardMember {
   image: string;
   bio: string;
   linkedin?: string;
-  twitter?: string;
   email?: string;
-  github?: string;
-  instagram?: string;
-  facebook?: string;
   website?: string;
 }
 
@@ -48,7 +44,6 @@ const AdvisoryBoard: React.FC = () => {
       image: director,
       bio: "Distinguished professor with 25 years of academic leadership experience. Spearheading our strategic initiatives and global partnerships. Authored several influential papers on educational reform.",
       linkedin: "#",
-      twitter: "#",
       email: "#",
       website: "#"
     },
@@ -61,7 +56,7 @@ const AdvisoryBoard: React.FC = () => {
       bio: "PhD in Computer Engineering with 15 years of industry experience. Specializes in AI research and has led multiple successful tech startups. Currently heading the AI ethics committee.",
       linkedin: "#",
       email: "#",
-      github: "#"
+      website: "#"
     },
     {
       id: 3,
@@ -71,8 +66,8 @@ const AdvisoryBoard: React.FC = () => {
       image: ao,
       bio: "Former CEO of TechCorp with expertise in business strategy and innovation management. Advisor to Fortune 500 companies and government think tanks on digital transformation.",
       linkedin: "#",
-      twitter: "#",
-      facebook: "#"
+      email: "#",
+      website: "#"
     },
     {
       id: 4,
@@ -83,7 +78,7 @@ const AdvisoryBoard: React.FC = () => {
       bio: "Published researcher in renewable energy systems with multiple patent awards. Leads the university's green energy initiative and international research collaborations.",
       linkedin: "#",
       email: "#",
-      instagram: "#"
+      website: "#"
     },
     {
       id: 5,
@@ -92,7 +87,7 @@ const AdvisoryBoard: React.FC = () => {
       department: "Mechanical Engineering",
       image: "https://randomuser.me/api/portraits/men/22.jpg",
       bio: "Industrial designer with 20+ years of experience in automotive engineering. Bridges academia and industry through innovative partnership programs and student internships.",
-      twitter: "#",
+      linkedin: "#",
       email: "#",
       website: "#"
     }
@@ -131,23 +126,24 @@ const AdvisoryBoard: React.FC = () => {
           <div className="divider"></div>
         </motion.div>
 
-        <div className="board-members-grid">
-          {boardMembers.map((member, index) => (
+        <div className="board-members-container">
+          {/* First row - single member centered */}
+          <div className="first-row">
             <motion.div
-              key={member.id}
+              key={boardMembers[0].id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`member-card ${activeMember === member.id ? 'active' : ''}`}
-              onClick={() => toggleBio(member.id)}
+              transition={{ duration: 0.6 }}
+              className={`member-card ${activeMember === boardMembers[0].id ? 'active' : ''}`}
+              onClick={() => toggleBio(boardMembers[0].id)}
               whileHover={{ y: -10 }}
             >
               <div className="card-inner">
                 <div className="card-image-container">
                   <div className="image-wrapper">
                     <img 
-                      src={member.image} 
-                      alt={member.name} 
+                      src={boardMembers[0].image} 
+                      alt={boardMembers[0].name} 
                       className="member-image"
                     />
                     <div className="image-hover-effect"></div>
@@ -156,43 +152,23 @@ const AdvisoryBoard: React.FC = () => {
                 </div>
 
                 <div className="card-content">
-                  <h3 className="member-name">{member.name}</h3>
-                  <p className="member-position">{member.position}</p>
-                  <p className="member-department">{member.department}</p>
+                  <h3 className="member-name">{boardMembers[0].name}</h3>
+                  <p className="member-position">{boardMembers[0].position}</p>
+                  <p className="member-department">{boardMembers[0].department}</p>
                   
                   <div className="social-links">
-                    {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                    {boardMembers[0].linkedin && (
+                      <a href={boardMembers[0].linkedin} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                         <FaLinkedin className="social-icon" />
                       </a>
                     )}
-                    {member.twitter && (
-                      <a href={member.twitter} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
-                        <FaTwitter className="social-icon" />
-                      </a>
-                    )}
-                    {member.email && (
-                      <a href={`mailto:${member.email}`} onClick={e => e.stopPropagation()}>
+                    {boardMembers[0].email && (
+                      <a href={`mailto:${boardMembers[0].email}`} onClick={e => e.stopPropagation()}>
                         <FaEnvelope className="social-icon" />
                       </a>
                     )}
-                    {member.github && (
-                      <a href={member.github} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
-                        <FaGithub className="social-icon" />
-                      </a>
-                    )}
-                    {member.instagram && (
-                      <a href={member.instagram} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
-                        <FaInstagram className="social-icon" />
-                      </a>
-                    )}
-                    {member.facebook && (
-                      <a href={member.facebook} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
-                        <FaFacebook className="social-icon" />
-                      </a>
-                    )}
-                    {member.website && (
-                      <a href={member.website} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                    {boardMembers[0].website && (
+                      <a href={boardMembers[0].website} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                         <FaGlobe className="social-icon" />
                       </a>
                     )}
@@ -201,7 +177,7 @@ const AdvisoryBoard: React.FC = () => {
               </div>
 
               <AnimatePresence>
-                {activeMember === member.id && (
+                {activeMember === boardMembers[0].id && (
                   <motion.div 
                     className="expanded-bio"
                     initial={{ opacity: 0, height: 0 }}
@@ -210,7 +186,7 @@ const AdvisoryBoard: React.FC = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="bio-content">
-                      <p>{member.bio}</p>
+                      <p>{boardMembers[0].bio}</p>
                       <button className="close-bio" onClick={(e) => {
                         e.stopPropagation();
                         closeBio();
@@ -222,7 +198,82 @@ const AdvisoryBoard: React.FC = () => {
                 )}
               </AnimatePresence>
             </motion.div>
-          ))}
+          </div>
+
+          {/* Second row - remaining four members */}
+          <div className="second-row">
+            {boardMembers.slice(1).map((member, index) => (
+              <motion.div
+                key={member.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className={`member-card ${activeMember === member.id ? 'active' : ''}`}
+                onClick={() => toggleBio(member.id)}
+                whileHover={{ y: -10 }}
+              >
+                <div className="card-inner">
+                  <div className="card-image-container">
+                    <div className="image-wrapper">
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="member-image"
+                      />
+                      <div className="image-hover-effect"></div>
+                    </div>
+                    <div className="decorative-shape"></div>
+                  </div>
+
+                  <div className="card-content">
+                    <h3 className="member-name">{member.name}</h3>
+                    <p className="member-position">{member.position}</p>
+                    <p className="member-department">{member.department}</p>
+                    
+                    <div className="social-links">
+                      {member.linkedin && (
+                        <a href={member.linkedin} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                          <FaLinkedin className="social-icon" />
+                        </a>
+                      )}
+                      {member.email && (
+                        <a href={`mailto:${member.email}`} onClick={e => e.stopPropagation()}>
+                          <FaEnvelope className="social-icon" />
+                        </a>
+                      )}
+                      {member.website && (
+                        <a href={member.website} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                          <FaGlobe className="social-icon" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <AnimatePresence>
+                  {activeMember === member.id && (
+                    <motion.div 
+                      className="expanded-bio"
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="bio-content">
+                        <p>{member.bio}</p>
+                        <button className="close-bio" onClick={(e) => {
+                          e.stopPropagation();
+                          closeBio();
+                        }}>
+                          <IoMdClose />
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
