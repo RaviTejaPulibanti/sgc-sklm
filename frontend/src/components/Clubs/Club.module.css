@@ -1,78 +1,46 @@
-/* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600&display=swap");
-
-:root {
-  --primary: #6c5ce7;
-  --secondary: #a29bfe;
-  --accent: #fd79a8;
-  --dark: #2d3436;
-  --light: #f5f6fa;
-  --tech-color: #0984e3;
-  --innovators-color: #00b894;
-  --club-color: #e84393;
-  --overlay: rgba(0, 0, 0, 0.6);
-
-  --font-heading: "Montserrat", sans-serif;
-  --font-about: "Playfair Display", serif;
-  --font-body: "Poppins", sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--dark);
-  background-color: var(--light);
+/* Base Styles */
+.mainContainer {
+  width: 100%;
+  margin: 0 auto;
   overflow-x: hidden;
 }
 
-.club-main-container {
-  width: 100%;
-  margin: 0 auto;
-}
-
 /* Hero Section */
-.club-main-hero {
+.mainHero {
   position: relative;
   width: 100vw;
   height: 150vh;
   min-height: 600px;
-  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
-    no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  left:0;
+  left: 0;
 }
 
-.club-hero-overlay {
+.heroOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--overlay);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
-.club-hero-content {
-  position:relative;
+.heroContent {
+  position: relative;
   z-index: 2;
-  top:-20%;
+  top: -20%;
   text-align: center;
   padding-top: 0px;
   max-width: 1200px;
-  margin: 0 ;
+  margin: 0;
 }
 
-.club-main-title {
-  font-family: var(--font-heading);
+.mainTitle {
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 500;
   margin-bottom: 20px;
@@ -80,83 +48,67 @@ body {
   line-height: 1;
 }
 
-.club-title-part {
+.titlePart {
   display: inline-block;
   margin: 0 5px;
 }
 
-.club-tech-text {
-  color: var(--tech-color);
+.techText {
+  color: #0984e3;
   text-shadow: 0 2px 10px rgba(9, 132, 227, 0.5);
 }
 
-.club-innovators-text {
-  color: var(--innovators-color);
+.innovatorsText {
+  color: #00b894;
   text-shadow: 0 2px 10px rgba(0, 184, 148, 0.5);
 }
 
-.club-name-text {
-  color: var(--club-color);
+.nameText {
+  color: #e84393;
   text-shadow: 0 2px 10px rgba(232, 67, 147, 0.5);
 }
 
-.club-colorful-underline {
+.colorfulUnderline {
   height: 5px;
   width: 200px;
   margin: 0 auto;
   background: linear-gradient(
     90deg,
-    var(--tech-color) 0%,
-    var(--innovators-color) 50%,
-    var(--club-color) 100%
+    #0984e3 0%,
+    #00b894 50%,
+    #e84393 100%
   );
   border-radius: 5px;
   transform-origin: center;
 }
 
 /* Section Styling */
-.club-section-container {
+.sectionContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0px 0px;
+  padding: 0 20px;
 }
 
-.club-section-title {
-  font-family: var(--font-heading);
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 40px;
   text-align: center;
   position: relative;
 }
 
-.club-section-title::after {
+.sectionTitle::after {
   content: "";
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background: linear-gradient(90deg, #6c5ce7, #fd79a8);
   margin: 15px auto 0;
   border-radius: 2px;
 }
 
-.club-full-width-hero {
-  width: 100%;
-  height: 50vh;
-  max-height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.club-hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 /* About Section */
-.club-about-section {
+.aboutSection {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -167,32 +119,33 @@ body {
   margin-bottom: 0px;
 }
 
-.club-about-content {
+.aboutContent {
   max-width: 800px;
   margin: 0 auto;
-   padding-bottom: 0px;
+  padding-bottom: 0px;
 }
 
-.club-about-text {
-  font-family: var(--font-about);
+.aboutText {
+  font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  color:white;
+  color: white;
 }
 
 /* Events Section */
-.club-events-section {
+.eventsSection {
   background-color: #f9f9f9;
+  padding: 80px 0;
 }
 
-.club-events-grid {
+.eventsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
-.club-event-card {
+.eventCard {
   background: white;
   border-radius: 10px;
   padding: 30px;
@@ -200,21 +153,21 @@ body {
   transition: all 0.3s ease;
 }
 
-.club-event-card h3 {
-  color: var(--primary);
+.eventCard h3 {
+  color: #6c5ce7;
   margin-bottom: 15px;
   font-size: 1.3rem;
 }
 
-.club-event-date {
-  color: var(--accent);
+.eventDate {
+  color: #fd79a8;
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 0.9rem;
 }
 
-.club-event-button {
-  background: var(--primary);
+.eventButton {
+  background: #6c5ce7;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -226,18 +179,23 @@ body {
   transition: all 0.3s ease;
 }
 
-.club-event-button:hover {
-  background: var(--secondary);
+.eventButton:hover {
+  background: #a29bfe;
 }
 
 /* Members Section */
-.club-members-grid {
+.membersSection {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.membersGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
 }
 
-.club-member-card {
+.memberCard {
   text-align: center;
   background: white;
   padding: 25px 20px;
@@ -246,7 +204,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.club-member-image-container {
+.memberImageContainer {
   position: relative;
   margin: 0 auto 20px;
   width: 150px;
@@ -255,14 +213,14 @@ body {
   overflow: hidden;
 }
 
-.club-member-image {
+.memberImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.club-linkedin-icon {
+.linkedinIcon {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -279,20 +237,20 @@ body {
   text-decoration: none;
 }
 
-.club-linkedin-icon:hover {
+.linkedinIcon:hover {
   transform: scale(1.2);
   background: #005582;
 }
 
-.club-member-role {
-  color: var(--secondary);
+.memberRole {
+  color: #a29bfe;
   font-size: 0.9rem;
   font-weight: 600;
   margin-top: 5px;
 }
 
 /* Floating Elements */
-.club-floating-element {
+.floatingElement {
   position: fixed;
   font-size: 3rem;
   z-index: -1;
@@ -300,73 +258,88 @@ body {
   filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
 
-.club-element-1 {
+.element1 {
   top: 20%;
   left: 5%;
 }
 
-.club-element-2 {
+.element2 {
   top: 60%;
   right: 5%;
   font-size: 2.5rem;
 }
 
+/* Loading States */
+.eventsLoading,
+.noEvents,
+.notFound {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .club-section-container {
+  .sectionContainer {
     padding: 60px 20px;
   }
 
-  .club-section-title {
+  .sectionTitle {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .club-main-hero {
+  .mainHero {
     min-height: 500px;
   }
 
-  .club-main-title {
+  .mainTitle {
     font-size: 2.8rem;
   }
 
-  .club-about-text {
+  .aboutText {
     font-size: 1rem;
   }
 
-  .club-members-grid {
+  .membersGrid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
-  .club-member-image-container {
+  .memberImageContainer {
     width: 120px;
     height: 120px;
   }
 }
 
 @media (max-width: 480px) {
-  .club-main-hero {
+  .mainHero {
     min-height: 400px;
   }
 
-  .club-main-title {
+  .mainTitle {
     font-size: 2.2rem;
   }
 
-  .club-section-title {
+  .sectionTitle {
     font-size: 1.8rem;
   }
-  .club-hero-content{
-    top:-180px;
+
+  .heroContent {
+    top: -180px;
   }
 
-  .club-section-container {
+  .sectionContainer {
     padding: 50px 15px;
   }
 
-  .club-event-card,
-  .club-member-card {
+  .eventCard,
+  .memberCard {
     padding: 20px 15px;
   }
 }

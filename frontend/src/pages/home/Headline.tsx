@@ -1,4 +1,4 @@
-import Marquee from "./MarqueeTextComponenet";
+import Marquee from "./Marquee";
 
 const Headline = () => {
     return (

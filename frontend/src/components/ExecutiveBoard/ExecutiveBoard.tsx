@@ -4,20 +4,23 @@ import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from 'react-icons/fa';
 import './ExecutiveBoard.css';
 
 //members images
-import president from "../../assets/executiveimgs/president.webp"
-import cseVp from  "../../assets/executiveimgs/cseVp.webp"
-import pucVp1 from "../../assets/executiveimgs/pucVp1.webp"
-import pucvp2 from "../../assets/executiveimgs/pucvp2.webp"
-import civilvp from "../../assets/executiveimgs/civilvp.webp"
-// import eceVp from "../../assets/executiveimgs/eceVp.webp"
-import eeeVp from "../../assets/executiveimgs/eeeVp.webp"
-import pr from "../../assets/executiveimgs/pr.webp"
-import apr1 from "../../assets/executiveimgs/apr1.webp"
-import apr2 from "../../assets/executiveimgs/apr2.webp"
-import sm from "../../assets/executiveimgs/sm.webp"
-import asm1 from "../../assets/executiveimgs/asm1.webp"
-
-
+import chairman from "../../assets/advisoryBoardimgs/chairman.webp"
+import vc1 from "../../assets/advisoryBoardimgs/vc1.webp"
+import vc2 from "../../assets/advisoryBoardimgs/vc2.webp"
+import vc3 from "../../assets/advisoryBoardimgs/vc3.webp"
+import president from "../../assets/executiveimgs/president.webp";
+import cseVp from  "../../assets/executiveimgs/cseVp.webp";
+import pucVp1 from "../../assets/executiveimgs/pucVp1.webp";
+import pucvp2 from "../../assets/executiveimgs/pucvp2.webp";
+import civilvp from "../../assets/executiveimgs/civilvp.webp";
+import eeeVp from "../../assets/executiveimgs/eeeVp.webp";
+import pr from "../../assets/executiveimgs/pr.webp";
+import apr1 from "../../assets/executiveimgs/apr1.webp";
+import apr2 from "../../assets/executiveimgs/apr2.webp";
+import sm from "../../assets/executiveimgs/sm.webp";
+import asm1 from "../../assets/executiveimgs/asm1.webp";
+import wom from "../../assets/webteam/m2.webp";
+import awom from "../../assets/webteam/m3.webp";
 
 interface BoardMember {
   id: number;
@@ -39,17 +42,17 @@ const ExecutiveBoard: React.FC = () => {
       id: 1,
       name: 'Mr. Ravi Gedela',
       position: 'Chairman',
-      image: 'https://randomuser.me/api/portraits/men/1.jpg',
+      image: chairman,
       social: {
-        linkedin: 'https://www.linkedin.com/in/ravi-gedela-123456789/'
+        linkedin: 'https://www.linkedin.com/in/ravi-gedela'
       }
     },
     {
       id: 2,
       name: 'Mr. P.Kutti',
       position: 'Vice Chairman',
-      image: 'https://randomuser.me/api/portraits/women/1.jpg',
-      department: 'Operations',
+      image: vc1,
+      department: 'IT',
       social: {
         linkedin: 'https://www.linkedin.com/in/p-kutti-123456789/'
       }
@@ -58,8 +61,8 @@ const ExecutiveBoard: React.FC = () => {
       id: 3,
       name: 'Mrs. R.Deepa',
       position: 'Vice Chairman',
-      image: 'https://randomuser.me/api/portraits/men/2.jpg',
-      department: 'Technology',
+      image: vc2,
+      department: 'IT',
       social: {
         linkedin: 'https://www.linkedin.com/in/r-deepa-123456789/'
       }
@@ -68,8 +71,8 @@ const ExecutiveBoard: React.FC = () => {
       id: 4,
       name: 'Mr. T.Narashimaappadu',
       position: 'Vice Chairman',
-      image: 'https://randomuser.me/api/portraits/women/2.jpg',
-      department: 'Finance',
+      image: vc3,
+      department: 'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/t-narashimaappadu-123456789/'
       }
@@ -218,7 +221,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 19,
       name: 'Harish',
       position: 'Associate Web Operations Manager',
-      image: 'https://randomuser.me/api/portraits/men/10.jpg',
+      image: awom,
       department: 'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/harish-123456789/'
@@ -228,7 +231,7 @@ const ExecutiveBoard: React.FC = () => {
       id: 20,
       name: 'Raviteja',
       position: 'Web operations Manager',
-      image: '',
+      image: wom,
       department: 'CSE',
       social: {
         linkedin: 'https://www.linkedin.com/in/raviteja-123456789/'
@@ -236,10 +239,8 @@ const ExecutiveBoard: React.FC = () => {
     },
   ];
 
-  // Floating background elements for all devices
   const FloatingElements = () => (
     <>
-      {/* Floating circles */}
       <motion.div 
         className="floating-element floating-circle"
         initial={{ x: -100, y: -50 }}
@@ -256,7 +257,6 @@ const ExecutiveBoard: React.FC = () => {
         }}
       />
       
-      {/* Floating triangles */}
       <motion.div 
         className="floating-element floating-triangle"
         initial={{ x: 100, y: 100 }}
@@ -273,7 +273,6 @@ const ExecutiveBoard: React.FC = () => {
         }}
       />
       
-      {/* Floating squares */}
       <motion.div 
         className="floating-element floating-square"
         initial={{ x: -150, y: 150 }}
@@ -361,79 +360,158 @@ const ExecutiveBoard: React.FC = () => {
         initial="hidden"
         animate="visible"
       >
-        {boardMembers.map((member, index) => (
-          <motion.div
-            key={member.id}
-            className={`board-card ${getCardClass(member.position)}`}
-            variants={cardVariants}
-            whileHover="hover"
-            custom={index}
-          >
-            <div className="card-image-container">
-              <img src={member.image || 'https://via.placeholder.com/150'} alt={member.name} className="card-image" />
-            </div>
-            <div className="card-content">
-              <h3 className="card-name">{member.name}</h3>
-              <p className="card-position">{member.position}</p>
-              {member.department && (
-                <p className="card-department">{member.department}</p>
-              )}
-              
-              {member.social && (
-                <div className="social-icons">
-                  {member.social.linkedin && (
-                    <motion.a 
-                      href={member.social.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      variants={iconVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      <FaLinkedin className="social-icon linkedin" />
-                    </motion.a>
-                  )}
-                  {member.social.twitter && (
-                    <motion.a 
-                      href={member.social.twitter} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      variants={iconVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      <FaTwitter className="social-icon twitter" />
-                    </motion.a>
-                  )}
-                  {member.social.facebook && (
-                    <motion.a 
-                      href={member.social.facebook} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      variants={iconVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      <FaFacebook className="social-icon facebook" />
-                    </motion.a>
-                  )}
-                  {member.social.instagram && (
-                    <motion.a 
-                      href={member.social.instagram} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      variants={iconVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      <FaInstagram className="social-icon instagram" />
-                    </motion.a>
-                  )}
-                </div>
-              )}
-            </div>
-          </motion.div>
-        ))}
+        {/* First row - single centered card */}
+        <div className="first-row-container">
+          {boardMembers.slice(0, 1).map((member) => (
+            <motion.div
+              key={member.id}
+              className={`board-card ${getCardClass(member.position)} first-row-card`}
+              variants={cardVariants}
+              whileHover="hover"
+            >
+              <div className="card-image-container">
+                <img src={member.image || 'https://via.placeholder.com/150'} alt={member.name} className="card-image" />
+              </div>
+              <div className="card-content">
+                <h3 className="card-name">{member.name}</h3>
+                <p className="card-position">{member.position}</p>
+                {member.department && (
+                  <p className="card-department">{member.department}</p>
+                )}
+                
+                {member.social && (
+                  <div className="social-icons">
+                    {member.social.linkedin && (
+                      <motion.a 
+                        href={member.social.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaLinkedin className="social-icon linkedin" />
+                      </motion.a>
+                    )}
+                    {member.social.twitter && (
+                      <motion.a 
+                        href={member.social.twitter} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaTwitter className="social-icon twitter" />
+                      </motion.a>
+                    )}
+                    {member.social.facebook && (
+                      <motion.a 
+                        href={member.social.facebook} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaFacebook className="social-icon facebook" />
+                      </motion.a>
+                    )}
+                    {member.social.instagram && (
+                      <motion.a 
+                        href={member.social.instagram} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaInstagram className="social-icon instagram" />
+                      </motion.a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Remaining members in 3-column layout */}
+        <div className="regular-rows-container">
+          {boardMembers.slice(1).map((member, index) => (
+            <motion.div
+              key={member.id}
+              className={`board-card ${getCardClass(member.position)}`}
+              variants={cardVariants}
+              whileHover="hover"
+              custom={index}
+            >
+              <div className="card-image-container">
+                <img src={member.image || 'https://via.placeholder.com/150'} alt={member.name} className="card-image" />
+              </div>
+              <div className="card-content">
+                <h3 className="card-name">{member.name}</h3>
+                <p className="card-position">{member.position}</p>
+                {member.department && (
+                  <p className="card-department">{member.department}</p>
+                )}
+                
+                {member.social && (
+                  <div className="social-icons">
+                    {member.social.linkedin && (
+                      <motion.a 
+                        href={member.social.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaLinkedin className="social-icon linkedin" />
+                      </motion.a>
+                    )}
+                    {member.social.twitter && (
+                      <motion.a 
+                        href={member.social.twitter} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaTwitter className="social-icon twitter" />
+                      </motion.a>
+                    )}
+                    {member.social.facebook && (
+                      <motion.a 
+                        href={member.social.facebook} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaFacebook className="social-icon facebook" />
+                      </motion.a>
+                    )}
+                    {member.social.instagram && (
+                      <motion.a 
+                        href={member.social.instagram} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        variants={iconVariants}
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        <FaInstagram className="social-icon instagram" />
+                      </motion.a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </div>
   );

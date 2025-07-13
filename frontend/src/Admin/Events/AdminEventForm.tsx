@@ -3,6 +3,23 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import styles from './AdminEventForm.module.css';
 
+import competative from "../../assets/clubimgs/competative.webp"
+import coding from "../../assets/clubimgs/coding.webp"
+import dp from "../../assets/clubimgs//photography.webp"
+import startup from "../../assets/clubimgs/startup.webp"
+import robotics from "../../assets/clubimgs/robotics.webp"
+import ls from "../../assets/clubimgs/ls.webp"
+import internship from "../../assets/clubimgs/internship.webp"
+import linquistic from "../../assets/clubimgs/linguistic.webp"
+import Finance from "../../assets/clubimgs/finance.webp"
+import sports from "../../assets/clubimgs/sports.webp"
+import cc from "../../assets/clubimgs/cc.webp"
+import arts from "../../assets/clubimgs/cc.webp"
+import electronics from "../../assets/clubimgs/electronics.webp"
+import eco from "../../assets/clubimgs/competative.webp"
+import yoga from "../../assets/clubimgs/competative.webp"
+import he from "../../assets/clubimgs/competative.webp"
+
 const AdminEventForm: React.FC = () => {
   const [formData, setFormData] = useState({
     title: '',
@@ -16,8 +33,37 @@ const AdminEventForm: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const clubs = [
+    { name: 'Competitive Club', icon: competative },
+    { name: 'Coding Club', icon: coding },
+    { name: 'Electronics Club', icon: electronics },
+    { name: 'Arts & Crafts Club', icon: arts },
+    { name: 'Cultural & Choreography Club', icon: cc },
+    { name: 'Studio Club', icon: dp },
+    { name: 'Internship & Career Opportunities Club', icon: internship },
+    { name: 'Startup Club', icon: startup },
+    { name: 'Higher Education Club', icon: he },
+    { name: 'Sports and Games Club', icon: sports },
+    { name: 'Eco club', icon: eco },
+    { name: 'Lecture Series Club', icon: ls },
+    { name: 'Linguistic & Personality Development Club', icon: linquistic },
+    { name: 'Research Club', icon: startup }, //research
+    { name: 'Finance Club', icon: Finance },
+    { name: 'Robotics Club', icon: robotics },
+    { name: 'Yoga Club', icon: yoga }
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // If club name changes and we have a matching club, set its icon
+    if (name === 'clubName') {
+      const selectedClub = clubs.find(club => club.name === value);
+      if (selectedClub) {
+        setFormData(prev => ({ ...prev, clubIcon: selectedClub.icon }));
+      }
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +74,7 @@ const AdminEventForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!image) return alert("Please select an image");
+    if (!image) return alert("Please select an event image");
 
     const payload = new FormData();
     payload.append('title', formData.title);
@@ -108,33 +154,44 @@ const AdminEventForm: React.FC = () => {
         </div>
 
         <div className={styles.row}>
-          <input
-            type="text"
+          <select
             name="clubName"
             value={formData.clubName}
             onChange={handleChange}
-            placeholder="Club Name"
             required
-            className={styles.input}
-          />
-          <input
-            type="text"
-            name="clubIcon"
-            value={formData.clubIcon}
-            onChange={handleChange}
-            placeholder="Emoji Icon (🎨)"
-            required
-            className={styles.input}
-          />
+            className={styles.select}
+          >
+            <option value="">Select Club</option>
+            {clubs.map((club, index) => (
+              <option key={index} value={club.name}>{club.name}</option>
+            ))}
+          </select>
+
+          <div className={styles.iconPreview}>
+            {formData.clubIcon ? (
+              <img 
+                src={formData.clubIcon} 
+                alt="Club Icon" 
+                className={styles.iconImage}
+              />
+            ) : (
+              <span className={styles.iconPlaceholder}>Icon</span>
+            )}
+          </div>
         </div>
 
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          required
-          className={styles.input}
-        />
+        <div className={styles.fileInputContainer}>
+          <label className={styles.fileInputLabel}>
+            Event Image
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              required
+              className={styles.fileInput}
+            />
+          </label>
+        </div>
 
         <motion.button
           type="submit"

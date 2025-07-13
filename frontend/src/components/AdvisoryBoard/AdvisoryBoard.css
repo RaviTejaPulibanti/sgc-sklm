@@ -1,4 +1,4 @@
-/* Modern Color Theme */
+/* AdvisoryBoard.css */
 :root {
   --primary: #2563eb;
   --primary-light: #3b82f6;
@@ -10,7 +10,6 @@
   --accent: #ec4899;
 }
 
-/* Base Styles */
 .advisory-board {
   padding: 7rem 1.5rem 5rem;
   background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
@@ -28,7 +27,6 @@
   z-index: 2;
 }
 
-/* Animated Background */
 .animated-bg {
   position: absolute;
   top: 0;
@@ -78,7 +76,6 @@
   animation: float 20s ease-in-out infinite 3s reverse;
 }
 
-/* Section Header */
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -112,15 +109,28 @@
   border-radius: 2px;
 }
 
-/* Board Members Grid */
-.board-members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.board-members-container {
+  display: flex;
+  flex-direction: column;
   gap: 2.5rem;
-  padding: 0 2rem;
 }
 
-/* Member Card */
+.first-row {
+  display: flex;
+  justify-content: center;
+}
+
+.first-row .member-card {
+  max-width: 350px;
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+
 .member-card {
   background: white;
   border-radius: 16px;
@@ -151,7 +161,6 @@
   padding: 2rem 1.5rem;
 }
 
-/* Card Image */
 .card-image-container {
   position: relative;
   margin-bottom: 1.5rem;
@@ -208,7 +217,6 @@
   opacity: 0.1;
 }
 
-/* Card Content */
 .card-content {
   text-align: center;
 }
@@ -233,12 +241,10 @@
   margin-bottom: 1.25rem;
 }
 
-/* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
 .social-icon {
@@ -256,34 +262,17 @@
 }
 
 .social-links a:nth-child(1) .social-icon:hover {
-  background: #0077b5; /* LinkedIn */
+  background: #0077b5;
 }
 
 .social-links a:nth-child(2) .social-icon:hover {
-  background: #1da1f2; /* Twitter */
+  background: #d44638;
 }
 
 .social-links a:nth-child(3) .social-icon:hover {
-  background: #d44638; /* Email */
+  background: #4a6baf;
 }
 
-.social-links a:nth-child(4) .social-icon:hover {
-  background: #333; /* GitHub */
-}
-
-.social-links a:nth-child(5) .social-icon:hover {
-  background: #e1306c; /* Instagram */
-}
-
-.social-links a:nth-child(6) .social-icon:hover {
-  background: #1877f2; /* Facebook */
-}
-
-.social-links a:nth-child(7) .social-icon:hover {
-  background: #4a6baf; /* Website */
-}
-
-/* Expanded Bio */
 .expanded-bio {
   background: white;
   overflow: hidden;
@@ -323,17 +312,15 @@
   background: rgba(236, 72, 153, 0.1);
 }
 
-/* Responsive Design */
 @media (max-width: 1440px) {
   .container {
     padding: 0 2rem;
   }
 }
 
-@media (max-width: 1024px) {
-  .board-members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
+@media (max-width: 1200px) {
+  .second-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -350,8 +337,17 @@
     font-size: 1rem;
   }
   
-  .member-card {
-    margin-bottom: 1rem;
+  .board-members-container {
+    gap: 1.5rem;
+  }
+  
+  .second-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .first-row .member-card,
+  .second-row .member-card {
+    max-width: 100%;
   }
   
   .expanded-bio {
@@ -374,10 +370,6 @@
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  }
-  
-  .board-members-grid {
-    padding: 0;
   }
 }
 
@@ -404,16 +396,11 @@
     font-size: 1.1rem;
   }
   
-  .board-members-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .bg-circle {
     display: none;
   }
 }
 
-/* Animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0) rotate(0deg);

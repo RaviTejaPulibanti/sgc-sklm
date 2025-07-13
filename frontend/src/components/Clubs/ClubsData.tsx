@@ -34,31 +34,34 @@ import ecoBg from "../../assets/clubBgimgs/ecoBg.webp"
 import yogaBg from "../../assets/clubBgimgs/yogaBg.webp"
 import heBg from "../../assets/clubBgimgs/heBg.webp"
 
-export interface ClubType {
-    id: string;
-    name1: string;
-    name2?: string;
-    founded: number;
-    about: string[];
+  export interface ClubEventType {
+  id: string;
+  title: string;
+  date: string;
+  description: string;
+  clubId?: string;
+}
+
+
+  export interface ClubType {
+  id: string;
+  name1: string;
+  name2?: string;
+  founded: number;
+  about: string[];
   description: string;
   image?: string;
-    heroImage: string;
-    backgroundImage : String;
-    events: {
-      id: number;
-      title: string;
-      date: string;
-      description: string;
-    }[];
-    members: {
-      id: number;
-      name: string;
-      role: string;
-      linkedin: string;
-      image: string;
-    }[];
-  }
-  
+  heroImage: string;
+  backgroundImage: string;
+  events: ClubEventType[]; // Use the new interface
+  members: {
+    id: number;
+    name: string;
+    role: string;
+    linkedin: string;
+    image: string;
+  }[];
+}
   export const clubsData: ClubType[] = [
     {
       id: 'competative',
@@ -76,47 +79,19 @@ export interface ClubType {
       backgroundImage: competativeBg,
       events: [
         {
-          id: 1,
+          id: "1",
           title: "Tech Conference 2023",
           date: "Oct 15, 2023",
           description:
             "Annual technology conference featuring industry leaders",
         },
         {
-          id: 2,
+          id: "2",
           title: "Hackathon",
           date: "Nov 20, 2023",
           description:
             "24-hour coding competition with exciting prizes",
           },
-          {
-            id: 3,
-            title: "Tech Conference 2023",
-            date: "Oct 15, 2023",
-            description:
-              "Annual technology conference featuring industry leaders",
-          },
-          {
-            id: 4,
-            title: "Hackathon",
-            date: "Nov 20, 2023",
-            description:
-              "24-hour coding competition with exciting prizes",
-          },    {
-            id: 5,
-            title: "Tech Conference 2023",
-            date: "Oct 15, 2023",
-            description:
-              "Annual technology conference featuring industry leaders",
-          },
-          {
-            id: 6,
-            title: "Hackathon",
-            date: "Nov 20, 2023",
-            description:
-              "24-hour coding competition with exciting prizes",
-          },
-        // Add more events
       ],
       members: Array.from({ length: 12 }, (_, i) => ({
         id: i + 1,
@@ -142,45 +117,18 @@ export interface ClubType {
               "Annual technology conference featuring industry leaders",
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
-            },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
             },
           // Add more events
         ],
@@ -208,46 +156,20 @@ export interface ClubType {
           backgroundImage: dpBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -274,47 +196,19 @@ export interface ClubType {
                 "Annual technology conference featuring industry leaders",
           events: [
             {
-              id: 1,
+              id: "1",
               title: "Tech Conference 2023",
               date: "Oct 15, 2023",
               description:
                 "Annual technology conference featuring industry leaders",
             },
             {
-              id: 2,
+              id: "2",
               title: "Hackathon",
               date: "Nov 20, 2023",
               description:
                 "24-hour coding competition with exciting prizes",
               },
-              {
-                id: 3,
-                title: "Tech Conference 2023",
-                date: "Oct 15, 2023",
-                description:
-                  "Annual technology conference featuring industry leaders",
-              },
-              {
-                id: 4,
-                title: "Hackathon",
-                date: "Nov 20, 2023",
-                description:
-                  "24-hour coding competition with exciting prizes",
-              },    {
-                id: 5,
-                title: "Tech Conference 2023",
-                date: "Oct 15, 2023",
-                description:
-                  "Annual technology conference featuring industry leaders",
-              },
-              {
-                id: 6,
-                title: "Hackathon",
-                date: "Nov 20, 2023",
-                description:
-                  "24-hour coding competition with exciting prizes",
-              },
-            // Add more events
           ],
           members: Array.from({ length: 12 }, (_, i) => ({
             id: i + 1,
@@ -341,46 +235,20 @@ export interface ClubType {
               "Annual technology conference featuring industry leaders",
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -407,46 +275,20 @@ export interface ClubType {
         backgroundImage: lsBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -474,47 +316,19 @@ export interface ClubType {
                 "Annual technology conference featuring industry leaders",
           events: [
             {
-              id: 1,
+              id: "1",
               title: "Tech Conference 2023",
               date: "Oct 15, 2023",
               description:
                 "Annual technology conference featuring industry leaders",
             },
             {
-              id: 2,
+              id: "2",
               title: "Hackathon",
               date: "Nov 20, 2023",
               description:
                 "24-hour coding competition with exciting prizes",
               },
-              {
-                id: 3,
-                title: "Tech Conference 2023",
-                date: "Oct 15, 2023",
-                description:
-                  "Annual technology conference featuring industry leaders",
-              },
-              {
-                id: 4,
-                title: "Hackathon",
-                date: "Nov 20, 2023",
-                description:
-                  "24-hour coding competition with exciting prizes",
-              },    {
-                id: 5,
-                title: "Tech Conference 2023",
-                date: "Oct 15, 2023",
-                description:
-                  "Annual technology conference featuring industry leaders",
-              },
-              {
-                id: 6,
-                title: "Hackathon",
-                date: "Nov 20, 2023",
-                description:
-                  "24-hour coding competition with exciting prizes",
-              },
-            // Add more events
           ],
           members: Array.from({ length: 12 }, (_, i) => ({
             id: i + 1,
@@ -539,46 +353,20 @@ export interface ClubType {
         backgroundImage: linquisticBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -604,46 +392,20 @@ export interface ClubType {
         backgroundImage: FinanceBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -670,46 +432,20 @@ export interface ClubType {
         backgroundImage: sportsBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -736,46 +472,20 @@ export interface ClubType {
         backgroundImage: ccBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -801,46 +511,20 @@ export interface ClubType {
           artsBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -866,46 +550,20 @@ export interface ClubType {
         backgroundImage: electronicsBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -931,46 +589,20 @@ export interface ClubType {
         backgroundImage: ecoBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -996,46 +628,20 @@ export interface ClubType {
         backgroundImage: yogaBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
@@ -1061,46 +667,20 @@ export interface ClubType {
         backgroundImage: heBg,
         events: [
           {
-            id: 1,
+            id: "1",
             title: "Tech Conference 2023",
             date: "Oct 15, 2023",
             description:
               "Annual technology conference featuring industry leaders",
           },
           {
-            id: 2,
+            id: "2",
             title: "Hackathon",
             date: "Nov 20, 2023",
             description:
               "24-hour coding competition with exciting prizes",
             },
-            {
-              id: 3,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 4,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },    {
-              id: 5,
-              title: "Tech Conference 2023",
-              date: "Oct 15, 2023",
-              description:
-                "Annual technology conference featuring industry leaders",
-            },
-            {
-              id: 6,
-              title: "Hackathon",
-              date: "Nov 20, 2023",
-              description:
-                "24-hour coding competition with exciting prizes",
-            },
+            
           // Add more events
         ],
         members: Array.from({ length: 12 }, (_, i) => ({
