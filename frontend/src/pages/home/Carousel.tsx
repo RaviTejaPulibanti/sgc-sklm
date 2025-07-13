@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './carousel.css'; 
+import styles from './Carousel.module.css'; 
 
 interface Slide {
   id: number;
@@ -34,38 +34,39 @@ const Carousel: React.FC<CarouselProps> = ({ slides, autoPlay = true, interval =
 
     return () => clearTimeout(timer);
   }, [currentSlide, autoPlay, interval]);
+  
   return (
-    <div className="carousel-container">
+    <div className={styles.container}>
       <div 
-        className="carousel"
+        className={styles.carousel}
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div key={slide.id} className="slide">
-            <div className="image-container">
+          <div key={slide.id} className={styles.slide}>
+            <div className={styles.imageContainer}>
               <img 
                 src={slide.imageUrl} 
                 alt={`Slide ${index + 1}`} 
-                className="slide-image"
+                className={styles.slideImage}
                 loading="lazy"
               />
-              <div className="overlay"></div>
+              <div className={styles.overlay}></div>
             </div>
-            <div className="content">
+            <div className={styles.content}>
               <h2 
-                className={`title ${currentSlide === index ? 'animate-in' : ''}`}
+                className={`${styles.title} ${currentSlide === index ? styles.animateIn : ''}`}
               >
                 {slide.title}
               </h2>
               <p 
-                className={`subtitle ${currentSlide === index ? 'animate-in' : ''}`}
+                className={`${styles.subtitle} ${currentSlide === index ? styles.animateIn : ''}`}
                 style={{ animationDelay: '0.3s' }}
               >
                 {slide.subtitle}
               </p>
               <a 
                 href={slide.ctaLink} 
-                className={`cta-button ${currentSlide === index ? 'animate-in' : ''}`}
+                className={`${styles.ctaButton} ${currentSlide === index ? styles.animateIn : ''}`}
                 style={{ animationDelay: '0.6s' }}
               >
                 {slide.ctaText}

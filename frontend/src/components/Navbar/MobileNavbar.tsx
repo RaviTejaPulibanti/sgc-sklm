@@ -4,8 +4,6 @@ import {
   FaTwitter, 
   FaInstagram, 
   FaLinkedin, 
-  FaSearch, 
-  FaUser,
   FaHome,
   FaInfoCircle,
   FaUsers,
@@ -19,8 +17,9 @@ import './MobileNavbar.css';
 const MobileNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedReport, setExpandedReport] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [isTickerVisible, setIsTickerVisible] = useState(true);
   const navRef = useRef<HTMLDivElement>(null);
+  const lastScrollTop = useRef(0);
 
   // Close navbar when clicking outside
   useEffect(() => {
@@ -48,6 +47,29 @@ const MobileNavbar: React.FC = () => {
     }
   }, [isOpen]);
 
+  // Handle scroll to show/hide ticker
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const headerHeight = document.querySelector('.mobile-header')?.clientHeight || 60;
+      
+      if (scrollTop > lastScrollTop.current) {
+        // Scrolling down
+        if (scrollTop > headerHeight) {
+          setIsTickerVisible(false);
+        }
+      } else {
+        // Scrolling up
+        setIsTickerVisible(true);
+      }
+      
+      lastScrollTop.current = scrollTop <= 0 ? 0 : scrollTop;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleNav = () => {
     setIsOpen(!isOpen);
     setExpandedReport(null);
@@ -62,28 +84,35 @@ const MobileNavbar: React.FC = () => {
       {/* Mobile Header Bar */}
       <div className="mobile-header">
         <div className="mobile-header-left">
-         <div className="flex items-center gap-2">
-           <img 
-               src="/rgukt_logo.png" 
-               alt="College Logo" 
-               className="h-8 w-auto" 
+          <div className="flex items-center gap-2">
+            <img 
+              src="/rgukt_logo.png" 
+              alt="College Logo" 
+              className="h-8 w-auto" 
             />
             <img 
-               src="https://sgcrguktsklm.org.in/assets/img/logo/logo1.png" 
-                alt="Organization Logo"
-                className="h-7 w-auto" 
+              src="https://sgcrguktsklm.org.in/assets/img/logo/logo1.png" 
+              alt="Organization Logo"
+              className="h-7 w-auto" 
             />
-       </div>
+          </div>
         </div>
-        
-        {/* <div className="mobile-header-center">
-             <span className="text-white font-medium">SGC</span>
-        </div> */}
         
         <div className="mobile-header-right">
           <div className="mobile-menu-button" onClick={toggleNav}>
             ☰
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Ticker - Will hide on scroll down */}
+      <div className={`mobile-ticker md-hidden lg-hidden ${!isTickerVisible ? 'hide-ticker' : ''}`}>
+        <div className="ticker-content">
+          <span>Latest Updates: </span>
+          <span>Admissions open for 2024-25 | </span>
+          <span>Annual sports day on May 15th | </span>
+          <span>New courses announced | </span>
+          <span>Campus placement drive starting June 1st</span>
         </div>
       </div>
 
@@ -104,20 +133,20 @@ const MobileNavbar: React.FC = () => {
         <div className="nav-section">
           <div className="section-title">MENU</div>
           <ul className="nav-list">
-          <li> <Link to="/" onClick={toggleNav}>
+            <li> <Link to="/" onClick={toggleNav}>
               <span className='flex gap-2'>
-              <FaHome className="nav-icon" />
+                <FaHome className="nav-icon" />
                 HOME
               </span></Link></li>
             <li> <Link to="/about" onClick={toggleNav}>
               <span className='flex gap-2'>
-              <FaInfoCircle className="nav-icon" />
-               ABOUT
+                <FaInfoCircle className="nav-icon" />
+                ABOUT
               </span></Link></li>
             <li> <Link to="/clubs" onClick={toggleNav}>
               <span className='flex gap-2'>
                 <FaUsers className="nav-icon" />
-               CLUBS
+                CLUBS
               </span></Link></li>
             <li> <Link to="/events" onClick={toggleNav}>
               <span className='flex gap-2'>

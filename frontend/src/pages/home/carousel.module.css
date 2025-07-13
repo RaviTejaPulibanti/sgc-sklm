@@ -1,9 +1,9 @@
 /* Main Container */
-.carousel-container {
+.container {
   position: relative;
   width: 100%;
   max-width: 1920px;
-  margin-top: 94px;
+
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -23,7 +23,7 @@
 }
 
 /* Image Container */
-.image-container {
+.imageContainer {
   position: relative;
   width: 100%;
   height: 60%;
@@ -31,7 +31,7 @@
   overflow: hidden;
 }
 
-.slide-image {
+.slideImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -83,7 +83,7 @@
   transform: translateY(20px);
 }
 
-.cta-button {
+.ctaButton {
   display: inline-block;
   padding: 12px 30px;
   background-color: #0056b3;
@@ -98,14 +98,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.cta-button:hover {
+.ctaButton:hover {
   background-color: #003d82;
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Animation for text elements */
-.animate-in {
+.animateIn {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
@@ -121,7 +121,7 @@
 }
 
 /* Navigation Arrows */
-.nav-arrow {
+.navArrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -140,15 +140,15 @@
   transition: all 0.3s ease;
 }
 
-.nav-arrow:hover {
+.navArrow:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.prev-arrow {
+.prevArrow {
   left: 20px;
 }
 
-.next-arrow {
+.nextArrow {
   right: 20px;
 }
 
@@ -173,7 +173,7 @@
   transition: all 0.3s ease;
 }
 
-.indicator.active {
+.indicatorActive {
   background-color: white;
   transform: scale(1.2);
 }
@@ -199,15 +199,15 @@
     margin-bottom: 1.5rem;
   }
 
-  .cta-button {
+  .ctaButton {
     padding: 10px 25px;
     font-size: 1rem;
   }
-  .carousel-container {
+  .container {
     margin-top: 70px;
   }
 
-  .nav-arrow {
+  .navArrow {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
@@ -215,13 +215,16 @@
 }
 
 @media (max-width: 480px) {
+  .container {
+    margin-top: 50px;
+  }
   .title {
     font-size: 1.6rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
-  .image-container {
-    padding-bottom: 60.34%;
+  .imageContainer {
+    padding-bottom: 76.34%;
   }
   .subtitle {
     font-size: 0.9rem;

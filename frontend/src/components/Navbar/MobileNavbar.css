@@ -1,10 +1,12 @@
 /* Hide on desktop by default */
 .mobile-header,
+.mobile-ticker,
 .mobile-navbar {
   display: none;
 }
 
 @media (max-width: 767px) {
+  /* Mobile Header - Stays fixed at top */
   .mobile-header {
     display: flex;
     align-items: center;
@@ -12,12 +14,11 @@
     padding: 10px 15px;
     background-color: rgb(233, 128, 8);
     color: white;
-    /* rgb(233, 128, 8); */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1100;
+    z-index: 1101; /* Higher than navbar */
     height: 60px;
   }
 
@@ -58,34 +59,39 @@
     font-size: 14px;
   }
 
+  /* Menu Button - Always visible */
   .mobile-menu-button {
     font-size: 30px;
     cursor: pointer;
     color: white;
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    z-index: 1102; /* Highest z-index */
   }
 
+  /* Nav Overlay - Covers content only */
   .nav-overlay {
     position: fixed;
-    top: 60px; /* Below the header */
+    top: 0px; /* Below header */
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 1099;
+    z-index: 1099; /* Below navbar */
   }
 
+  /* Mobile Navbar - Slides from right */
   .mobile-navbar {
     display: block;
     position: fixed;
-    top: 5px; /* Below the header */
+    top: 0px; /* Below header */
     right: -100%;
     width: 80%;
     max-width: 300px;
     height: calc(100vh - 60px);
-    background: #f0f0f0; /* Grey background */
-    z-index: 1100;
+    background: #f0f0f0;
+    z-index: 1102; /* Below header but above overlay */
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease-out;
     overflow-y: auto;
@@ -95,6 +101,7 @@
     right: 0;
   }
 
+  /* Navbar Content Styles */
   .nav-header {
     background: rgb(233, 128, 8);
     color: white;
@@ -182,5 +189,54 @@
 
   .icon:hover {
     color: #2c3e50;
+  }
+
+  /* Mobile Ticker - Below header */
+  .mobile-ticker {
+    height: 32px;
+    background-color: #f8f9fa;
+    color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 60px; /* Below header */
+    left: 0;
+    right: 0;
+    z-index: 998; /* Below everything */
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+  }
+
+  .mobile-ticker.hide-ticker {
+    transform: translateY(-100%);
+  }
+
+  .mobile-ticker .ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: mobileTicker 25s linear infinite;
+  }
+
+  .mobile-ticker .ticker-content span {
+    margin-right: 30px;
+  }
+
+  .mobile-ticker .ticker-content span:first-child {
+    font-weight: bold;
+    color: #0056b3;
+  }
+
+  @keyframes mobileTicker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
 }

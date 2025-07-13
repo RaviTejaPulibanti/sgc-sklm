@@ -1,8 +1,8 @@
-// components/CollegeInfoCards.tsx
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import styles from './CollegeInfoCards.module.css';
 
 const CollegeInfoCards: React.FC = () => {
   const controls = useAnimation();
@@ -40,37 +40,33 @@ const CollegeInfoCards: React.FC = () => {
     }
   };
 
-  // Different colors for each card
-  const cardColors = [
-    'bg-gradient-to-br from-blue-500/50 to-indigo-600/50', // Blue gradient
-    'bg-gradient-to-br from-emerald-500/20 to-teal-600/20', // Green gradient
-    'bg-gradient-to-br from-purple-500/20 to-violet-600/20' // Purple gradient
+  // Different gradient classes for each card
+  const cardGradients = [
+    styles.blueGradient,
+    styles.greenGradient,
+    styles.purpleGradient
   ];
 
   return (
     <div 
       ref={ref}
-      className="relative z-20 px-4 w-full"
-      style={{
-        marginTop: '-3rem',
-        marginBottom: '5rem'
-      }}
+      className={styles.container}
     >
       <motion.div
-        className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
+        className={styles.gridContainer}
         initial="hidden"
         animate={controls}
         variants={containerVariants}
       >
         {/* Card 1 */}
         <motion.div 
-          className={`${cardColors[0]} backdrop-blur-lg bg-white/10 p-8 lg:p-10 rounded-xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 min-h-[120px] flex flex-col relative overflow-hidden`}
+          className={`${styles.card} ${cardGradients[0]}`}
           variants={cardVariants}
         >
-          <div className="absolute inset-0 bg-white/5 rounded-xl" />
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 font-serif text-center relative z-10">Academic Excellence</h3>
-          <p className="text-gray-800 text-base md:text-lg flex-grow relative z-10">
-          Experience a dynamic campus and the environment with numerous clubs, sports, and cultural
+          <div className={styles.cardOverlay} />
+          <h3 className={styles.cardTitle}>Academic Excellence</h3>
+          <p className={styles.cardText}>
+            Experience a dynamic campus and the environment with numerous clubs, sports, and cultural
             activities that foster personal growth and community.
             Experience a dynamic campus environment with numerous clubs, sports, and cultural
           </p>
@@ -78,28 +74,27 @@ const CollegeInfoCards: React.FC = () => {
 
         {/* Card 2 */}
         <motion.div 
-          className={`${cardColors[1]} backdrop-blur-lg bg-white/10 p-8 lg:p-10 rounded-xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 min-h-[120px] flex flex-col relative overflow-hidden`}
+          className={`${styles.card} ${cardGradients[1]}`}
           variants={cardVariants}
         >
-          <div className="absolute inset-0 bg-white/5 rounded-xl" />
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 font-serif text-center relative z-10">Vibrant Campus Life</h3>
-          <p className="text-gray-800 text-base md:text-lg flex-grow relative z-10">
+          <div className={styles.cardOverlay} />
+          <h3 className={styles.cardTitle}>Vibrant Campus Life</h3>
+          <p className={styles.cardText}>
             Experience a dynamic campus and the environment with numerous clubs, sports, and cultural
             activities that foster personal growth and community.
             Experience a dynamic campus environment with numerous clubs, sports, and cultural
-            
           </p>
         </motion.div>
 
         {/* Card 3 */}
         <motion.div 
-          className={`${cardColors[2]} backdrop-blur-lg bg-white/10 p-8 lg:p-10 rounded-xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 min-h-[120px] flex flex-col relative overflow-hidden`}
+          className={`${styles.card} ${cardGradients[2]}`}
           variants={cardVariants}
         >
-          <div className="absolute inset-0 bg-white/5 rounded-xl" />
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 font-serif text-center relative z-10">Career Opportunities</h3>
-          <p className="text-gray-800 text-base md:text-lg flex-grow relative z-10">
-          Experience a dynamic campus  and  the environment with numerous clubs, sports, and cultural
+          <div className={styles.cardOverlay} />
+          <h3 className={styles.cardTitle}>Career Opportunities</h3>
+          <p className={styles.cardText}>
+            Experience a dynamic campus and the environment with numerous clubs, sports, and cultural
             activities that foster personal growth and community.
             Experience a dynamic campus environment with numerous clubs, sports, and cultural
           </p>
